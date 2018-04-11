@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Blog - Comentários</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="estilo.css" />
+	<script src="posts/_postsScript.js"></script>
+</head>
+<body onload="loadPosts()">
+
+				<!-- Comentários inicio -->
+
+	<div id="divAling" class="bloco">
+		<h1>Comentários</h1>
+		<div id="comentarios">
+			<div class="bloco1">
+				<div>
+					<p>Nome: </p><br/>
+					<p>Título: </p>
+					<p>
+						<textarea placeholder="Adicione seu post" width="10px" height="10px"></textarea>
+					</p>
+				</div>
+			</div>
+		</div>
+		<br/>
+		<button type="button" name="moreComments" onclick="loadPosts()">Mostrar Mais</button>
+	</div>
+				<!-- Comentários Fim -->
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+head {padding:0; margin:0;}
+body {font-family:'handlee', cursive; padding:10px; margin:0px;background-color:#DCDCDC;}
+header {background-color: #1abc9c; padding:20px; margin-top:10px;border-radius:10px;}
+header #img-perfil {border:3px solid white;border-radius:100px;}
+header img {display:block;margin:auto;width:128px;height:128px;}
+header p {text-align:center; margin-top:0px;font-size:25pt;}
+.bloco {background-color:white; padding:20px; margin-top:10px;border-radius:10px;}
+.bloco h1 {text-align:center; background-color: #333; border-radius:10px; color: white; padding: 5px;}
+p {text-indent:justify;}
+footer {text-align:center;}
+form {margin:auto; text-align:center;}
+#texto {text-align:left;margin-left:27.5%}
+textarea {resize:none;}
+div#comentarios {width:960px; height:1440px; max-height: auto;border-radius: 10px; font-family: 'hundlee', cursive; overflow: hidden; margin: auto;}
+div#divAling {text-align: center;}
+dt, dd {text-align: justify; padding: 7px;}
+dl {margin: 25px;}
+button[name=moreComments] {padding: 12px 28px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black;}
+.bloco1 {background-color:lightgray; padding:20px; margin-top:10px;border-radius:10px;}
+.bloco2 {display:block; background-color:lightgray; padding:20px; margin-top:10px;border-radius:10px; width:780px; margin-left:10%;}
+button[type=button]#comentar {padding: 6px 14px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black;}
+button.comentar {padding: 6px 14px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black; display: block;}
+span {color: #1abc9c;}
