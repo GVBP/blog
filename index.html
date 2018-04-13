@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="estilo.css"/>
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<meta http-equiv="Access-Control-Allow-Credentials" content="true">
+	<script src="posts/_postsScript.js"></script>
 
 </head>
 <body onload="loadPosts()">
@@ -38,13 +39,12 @@
 				<!-- Contato inicio -->
  	<div class="bloco">
   		<h1>Contato</h1>
-  		<form id="texto" action="#" method="GET" onsubmit="funcao()">
+  		<form id="texto">
    			Nome: <input id="uNome" type="text" name="nome" value="" placeholder="Insira seu nome.." size="66" ><br/><br/>
    			E-mail: <input id="uEmail" type="email" name="email" value="" placeholder="Insira seu e-mail.." size="65.8" ><br/>
    			<p>Insira sua mensagem:<p>
-   			<textarea name="mensagem" rows="20" cols="75" name="mensagem" placeholder="Digite sua mensagem aqui.." ></textarea><br/>
-   			<input id="sPost" type="submit" formmethod="post" name="submit-post" value="Enviar"/>
-   			<input id="sGet" type="submit" formmethod="get" name="submit-get" value="Pesquisar" onclick=""/>
+   			<textarea id="uTextArea" name="mensagem" rows="20" cols="75" name="mensagem" placeholder="Digite sua mensagem aqui.." ></textarea><br/>
+   			<button id="sPost" type="button" name="submit-post" onclick="postContato()"/>Enviar</button>
    			<input id="bReset" type="reset" name="limpar" value="Limpar"/>
   		</form>
  	</div>

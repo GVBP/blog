@@ -7,7 +7,6 @@ function loadPosts() {
             var posts = JSON.parse(this.responseText); // var 'posts' recebe todo o arquivo transformado do JSON para javaScript;
             var postsHtml = document.getElementById('comentarios'); // var 'postsHtml' recebe todo o conteúdo do elemento 'posts';
             var imagens = loadImages(); // var 'imagens' recebe todas as imagens da função 'loadImages()';
-            
 
             var tituloHead = document.createElement('h1');
             tituloHead.classList.add("postsHead");
@@ -20,6 +19,7 @@ function loadPosts() {
                 //console.log('teste', tituloBody[i]);
                 var index = Math.floor((Math.random() * 100) + 1);
                 var areaPost = document.createElement('div');
+
                 areaPost.innerHTML = "<img class='imagePost' src='http://placehold.it/750x300' alt='Card image cap'></img>";
                 areaPost.classList.add("bloco1");
                 //var dtHtml = document.createElement('dt');
@@ -44,7 +44,7 @@ function loadPosts() {
                 postsHtml.appendChild(areaPost);
                 
             }
-            console.log('teste', tituloBody);
+            //console.log('teste', tituloBody);
         }				
     };
     
@@ -140,4 +140,29 @@ function redirecionamento() {
     console.log('teste', teste);
     var t = document.getElementById('tituloPost');
     t.innerText = tituloBody[1].titulo;
+}
+
+function postContato() {
+    var nome = document.getElementById('uNome').value;
+    console.log('teste',nome);
+    var email = document.getElementById('uEmail').value;
+    var textArea = document.getElementById('uTextArea').value;
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            user : nome,
+            title : email,
+            body : textArea
+        }),
+        headers: {
+            'Content-type' : 'Application/json; charset=UTF-8'
+        }
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+    nome.value = "";
+    email.value = "";
+    textArea.value = "";
 }
