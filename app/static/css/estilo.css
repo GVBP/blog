@@ -7,7 +7,7 @@ header p {text-align:center; margin-top:0px;font-size:25pt;}
 .bloco {background-color:white; padding:20px; margin-top:10px;border-radius:10px;}
 .bloco h1 {text-align:center; background-color: #333; border-radius:10px; color: white; padding: 5px;}
 footer {text-align:center; background-color:#333; color: white; padding:20px; margin-top:10px;border-radius:10px;}
-form {margin:auto; text-align:center;}
+/*form {margin:auto; text-align:center;}*/
 #texto {text-align:left;margin-left:27.5%}
 textarea {resize:none;}
 div#comentarios {width:960px; height:1440px; max-height: auto;border-radius: 10px; font-family: 'hundlee', cursive; overflow: hidden; margin: auto;}
@@ -30,3 +30,4 @@ a#btnLeiaMais:active {text-decoration: none;}
 div#footerPost {text-align:left;background-color:#333; color: white; padding:10px; margin-top:10px;border-radius:10px;}
 div#postagem {width:900px; margin: auto;}
 div#formulario {width:900px;margin: auto;border: 1px solid lightgray;}
+h1 {text-align: center;}
