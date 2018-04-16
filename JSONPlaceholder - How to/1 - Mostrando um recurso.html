@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mostrando um recurso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => response.json())
+            .then(json => console.log(json))
+    </script>
+</head>
+<body>
+</body>
+</html>
