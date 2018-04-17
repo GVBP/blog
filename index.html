@@ -7,6 +7,7 @@
 	<meta name="author" value="Guilherme"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="app/static/vendor/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="app/static/vendor/bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" href="app/static/css/estilo.css"/>
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<meta http-equiv="Access-Control-Allow-Credentials" content="true">
@@ -27,7 +28,7 @@
 	<nav>
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="http://127.0.0.1:5500/index.html" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-			<a class="nav-item nav-link" id="myTab a" data-toggle="tab" href="#nav-postagem" role="tab" aria-controls="nav-postagem" aria-selected="false">Postagem</a>
+			<a class="nav-item nav-link" id="myTab a" data-toggle="tab" href="http://127.0.0.1:5500/app/posts/posts.html" role="tab" aria-controls="nav-postagem" aria-selected="false">Postagem</a>
 			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contato</a>
 		</div>
 	</nav>
@@ -59,15 +60,17 @@
  	<div class="container">
 		<h1>Contato</h1>
 		<hr/>
-		<div class="container">
-			<form class="px-4 py-3">
-				<div class="form-group">
-					<label for="uNome">Nome Completo</label>
-					<input id="uNome" class="form-control" type="text" name="nome" value="" placeholder="Insira seu nome.." size="66" >
-				</div>
-				<div class="form-group">
-					<label for="uEmail">Endereço de e-mail</label>
-					<input id="uEmail" class="form-control" type="email" name="email" value="" placeholder="Insira seu e-mail.." size="65.8" >
+		<div class="container w-75 p-3">
+			<form class="form-group">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="uNome">Nome Completo</label>
+						<input id="uNome" class="form-control form-control-sm" type="text" name="nome" value="" placeholder="Insira seu nome.." size="66" >
+					</div>
+					<div class="form-group col-md-6">
+						<label for="uEmail">Endereço de e-mail</label>
+						<input id="uEmail" class="form-control form-control-sm" type="email" name="email" value="" placeholder="Insira seu e-mail.." size="65.8" >
+					</div>
 				</div>
 				<div class="form-group">
 					<label for="uTextArea">Insira sua mensagem</label>
@@ -82,7 +85,7 @@
 				<!-- Contato Fim -->
 			
 				<!-- Rodapé inicio -->
- 	<footer>
+ 	<footer class="container">
 		<!-- 
 		<img src="iconFacebook.png" alt="Facebook" width="48" height="48">
  		<img src="" alt="Google" width="64" height="64">

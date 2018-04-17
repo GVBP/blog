@@ -12,39 +12,53 @@ function loadPosts() {
             tituloHead.classList.add("postsHead");
             tituloHead.innerHTML = "Posts Page";
             postsHtml.appendChild(tituloHead);
+            var linhaPost = document.createElement('hr');
+            postsHtml.appendChild(linhaPost);
             
             for (var i = 0; i < posts.length; i++) {
-                var post = posts[i]; 
+                var post = posts[i];
                 tituloBody.push({'numero' : i,'titulo' : post.title,'body' : post.body});
-                //console.log('teste', tituloBody[i]);
                 var index = Math.floor((Math.random() * 100) + 1);
-                var areaPost = document.createElement('div');
-
-                areaPost.innerHTML = "<img class='imagePost' src='http://placehold.it/750x300' alt='Card image cap'></img>";
-                areaPost.classList.add("bloco1");
-                //var dtHtml = document.createElement('dt');
-                //dtHtml.innerHTML =  "<img src='" + imagens[index] + "' style='width:50px; height:50px; border-radius:50px;'></img>";//"Usuário: " + post.id;
-                //areaPost.appendChild(dtHtml);
-                var ddTitulo = document.createElement('h2');
-                ddTitulo.innerHTML = "<span>Título:</span> " + post.title + ".";
-                areaPost.appendChild(ddTitulo);
-                var ddPost = document.createElement('p');
-                ddPost.innerHTML = post.body + ".";
-                areaPost.appendChild(ddPost);
-                var botao = document.createElement("a");
-                botao.setAttribute('id', 'btnLeiaMais');
-                botao.innerHTML = "<button id='leiaMais' type='button'>Leia Mais &rarr;</button>";
-                botao.setAttribute('href', 'http://127.0.0.1:5500/comentarios.html');
-                botao.addEventListener("click", function() {});//redirecionamento(post.title, post.body);});
-                areaPost.appendChild(botao);
-                var footerPost = document.createElement('div');
-                footerPost.setAttribute('id', 'footerPost');
-                footerPost.innerHTML = "Postado em Janeiro 1, 2018 por " + '"Usuário"';
-                areaPost.appendChild(footerPost);
+                var areaPost = document.createElement('div');////
+                areaPost.setAttribute('class','card text-center');
+                    /*
+                    var imagePost = document.createElement('img');
+                    imagePost.classList.add('card-img-top');
+                    imagePost.setAttribute('src','http://placehold.it/750x300');
+                    imagePost.setAttribute('alt','Card image cap');
+                    imagePost.setAttribute('width', '723px');
+                    imagePost.setAttribute('height', '180px');
+                    areaPost.appendChild(imagePost);
+                    */
+                    var header = document.createElement('div');
+                    header.setAttribute('class', 'card-header');
+                    header.innerHTML = "Featured";
+                    areaPost.appendChild(header);
+                    var cardBody = document.createElement('div');
+                        cardBody.setAttribute('class','card-body');
+                        var ddTitulo = document.createElement('h5');
+                        ddTitulo.setAttribute('class','card-title');
+                        ddTitulo.innerHTML = "<span>" + post.title + "</span>";
+                        cardBody.appendChild(ddTitulo);
+                        var ddPost = document.createElement('p');
+                        ddPost.setAttribute('class','card-text');
+                        ddPost.innerHTML = post.body + ".";
+                        cardBody.appendChild(ddPost);
+                        var botao = document.createElement("a");
+                        botao.setAttribute('class', 'p-2 text-muted');
+                        botao.setAttribute('href', 'http://127.0.0.1:5500/app/comments/comments.html');
+                        botao.setAttribute('role', 'button');
+                        botao.innerHTML = "Leia Mais &rarr;";
+                        cardBody.appendChild(botao);
+                    areaPost.appendChild(cardBody);
+                    var footerPost = document.createElement('div');
+                    footerPost.setAttribute('class', 'card-footer text-muted');
+                    footerPost.innerHTML = "Postado em Janeiro 1, 2018 por " + '"Usuário"';
+                    areaPost.appendChild(footerPost);
                 postsHtml.appendChild(areaPost);
-                
+                var linha = document.createElement('hr');
+                postsHtml.appendChild(linha);
             }
-            //console.log('teste', tituloBody);
         }				
     };
     
@@ -114,19 +128,22 @@ function formularios() {
 
     for (var i = 0; i < comentarios.length; i++) {
         var areaComent = document.createElement('div');
-        areaComent.setAttribute('style', 'width:900px;');
+        areaComent.setAttribute('style', 'width:auto;');
         var imagem = document.createElement('img');
         imagem.setAttribute('src', 'http://placehold.it/50x50');
         imagem.setAttribute('style', 'width:50px;height:50px;float:left;border-radius:70px;margin-right:15px;');
         areaComent.appendChild(imagem);
         var comentario = document.createElement('div');
-        comentario.setAttribute('style', 'width:835px;margin-left:65px;');
+        comentario.setAttribute('class', 'container');
+        //comentario.setAttribute('style', 'width:835px;margin-left:65px;');
         var titulo = document.createElement('h5');
-        titulo.setAttribute('style', 'text-align:left;margin:0px;margin-top:20px;');
+        titulo.setAttribute('class','card-title');
+        //titulo.setAttribute('style', 'text-align:left;margin:0px;margin-top:20px;');
         titulo.innerHTML = comentarios[i].user;
         comentario.appendChild(titulo);
         var body = document.createElement('p');
-        body.setAttribute('style', 'text-align:justify;margin-top:0px;margin:0px;');
+        body.setAttribute('class','card-text');
+        //body.setAttribute('style', 'text-align:justify;margin-top:0px;margin:0px;');
         body.innerText = comentarios[i].msg;
         comentario.appendChild(body);
         areaComent.appendChild(comentario);

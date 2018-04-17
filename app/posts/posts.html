@@ -5,23 +5,37 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Blog - Comentários</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="estilo.css" />
-	<script src="posts/_postsScript.js"></script>
+	<link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css"/>
+	<link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../static/css/estilo.css"/>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta http-equiv="Access-Control-Allow-Credentials" content="true">
+	<script src="../static/js/_postsScript.js"></script>
 </head>
-<body onload="loadPosts()">
+<body class="container" onload="loadPosts()">
 
 				<!-- Barra de Navegação Inicio -->
-
 	<nav>
-		
+		<div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="http://127.0.0.1:5500/index.html" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+			<a class="nav-item nav-link active" id="myTab a" data-toggle="tab" href="http://127.0.0.1:5500/app/posts/posts.html" role="tab" aria-controls="nav-postagem" aria-selected="false">Postagem</a>
+			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contato</a>
+		</div>
 	</nav>
-	
+		<!--
+		<div class="tab-content" id="nav-tabContent">
+			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+			<div class="tab-pane fade" id="nav-postagem" role="tabpanel" aria-labelledby="nav-postagem-tab">...</div>
+			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+		</div>
+			-->
+	<hr/>
 				<!-- Barra de Navegação Fim -->
 
 				<!-- Comentários inicio -->
 
-	<div id="divAling" class="bloco">
-		<div id="comentarios">
+	<div id="divAling" class="container">
+		<div class="container" id="comentarios">
 			<!--
 			<div class="bloco1">
 				<div>
@@ -40,7 +54,7 @@
 				<!-- Comentários Fim -->
 
 				<!-- Rodapé inicio -->
- 	<footer>
+ 	<footer class="container">
 		 <!--
 		<img src="iconFacebook.png" alt="Facebook" width="42" height="42">
 		<img src="" alt="Google" width="42" height="42">
