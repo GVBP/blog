@@ -5,9 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Blog - Comentários</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../static/css/estilo.css" />
 	<link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css"/>
 	<link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../static/css/estilo.css"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<meta http-equiv="Access-Control-Allow-Credentials" content="true">
 	<script src="../static/js/_postsScript.js"></script>
 </head>
 <body class="container" onload="redirecionamento()">
@@ -15,9 +17,9 @@
 				<!-- Barra de Navegação Inicio -->
 	<nav>
 		<div class="nav nav-tabs" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="http://127.0.0.1:5500/index.html" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-			<a class="nav-item nav-link active" id="myTab a" data-toggle="tab" href="http://127.0.0.1:5500/app/posts/posts.html" role="tab" aria-controls="nav-postagem" aria-selected="false">Postagem</a>
-			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="http://127.0.0.1:5500/index.html#contato" role="tab" aria-controls="nav-contact" aria-selected="false">Contato</a>
+			<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="http://127.0.0.1:5500/index.html" role="tab" aria-controls="nav-home" aria-selected="false">Home</a>
+			<a class="nav-item nav-link active" id="myTab a" data-toggle="tab" href="http://127.0.0.1:5500/app/posts/posts.html" role="tab" aria-controls="nav-postagem" aria-selected="true">Postagem</a>
+			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="http://127.0.0.1:5500/app/contato/contato.html" role="tab" aria-controls="nav-contact" aria-selected="false">Contato</a>
 		</div>
 	</nav>
 	<hr/>
@@ -40,10 +42,11 @@
             <div class="form-group" id="formulario">
                 <h2>Deixe um comentário:</h2>
                 <hr/>
-                <form>
+                <form class="form-group">
                     <input class="form-control form-control-sm" id="nome" name="nome" type="text" placeholder="Digite seu nome.."/><br/>
                     <textarea class="form-control form-control-sm" id="mensagem" rows="10" placeholder="Digite seu comentário.."></textarea><br/>
-                    <button type="button" onclick="formularios()" id="leiaMais">Enviar</button><br/>
+                    <button class="btn btn-outline-info" type="button" onclick="formularios()" id="bEnviar">Enviar</button>
+                    <input id="bReset" class="btn btn-outline-info" type="reset" name="limpar" value="Limpar"/>
                 </form>
             </div>
             <hr/>

@@ -7,13 +7,6 @@ function loadPosts() {
             var posts = JSON.parse(this.responseText); // var 'posts' recebe todo o arquivo transformado do JSON para javaScript;
             var postsHtml = document.getElementById('comentarios'); // var 'postsHtml' recebe todo o conteúdo do elemento 'posts';
             var imagens = loadImages(); // var 'imagens' recebe todas as imagens da função 'loadImages()';
-
-            var tituloHead = document.createElement('h1');
-            tituloHead.classList.add("postsHead");
-            tituloHead.innerHTML = "Posts Page";
-            postsHtml.appendChild(tituloHead);
-            var linhaPost = document.createElement('hr');
-            postsHtml.appendChild(linhaPost);
             
             for (var i = 0; i < posts.length; i++) {
                 var post = posts[i];
@@ -99,8 +92,6 @@ function formularios() {
     var comentarios = [];
 
     comentarios.push({"msg":mensagem,"title":"testando","user":nome});
-    document.getElementById('nome').value = '';
-    document.getElementById('mensagem').value = '';
 
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
@@ -126,20 +117,23 @@ function formularios() {
         areaComent.appendChild(imagem);
         var comentario = document.createElement('div');
         comentario.setAttribute('class', 'container');
-        //comentario.setAttribute('style', 'width:835px;margin-left:65px;');
         var titulo = document.createElement('h5');
         titulo.setAttribute('class','card-title');
-        //titulo.setAttribute('style', 'text-align:left;margin:0px;margin-top:20px;');
         titulo.innerHTML = comentarios[i].user;
         comentario.appendChild(titulo);
         var body = document.createElement('p');
         body.setAttribute('class','card-text');
-        //body.setAttribute('style', 'text-align:justify;margin-top:0px;margin:0px;');
         body.innerText = comentarios[i].msg;
         comentario.appendChild(body);
         areaComent.appendChild(comentario);
+        var linha = document.createElement('hr');
+        areaComent.appendChild(linha);
         var postagem = document.getElementById('postagem');
-        postagem.appendChild(areaComent);
+        if (comentarios[i].user != "" && comentarios[i].msg != "") {
+            document.getElementById('nome').value = '';
+            document.getElementById('mensagem').value = '';
+            postagem.appendChild(areaComent);
+        }
     }
 }
 

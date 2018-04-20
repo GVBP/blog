@@ -15,7 +15,6 @@ dl {margin: 25px;}
 button[name=moreComments] {padding: 12px 28px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black;}
 div.bloco1 {background-color:lightgray; padding:20px; margin-top:10px;border-radius:10px; width: 750px;}
 button[type=button]#comentar {padding: 6px 14px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black;}
-button#leiaMais {padding: 6px 14px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black; border-radius: 5px;}
 span {color: #1abc9c;}
 nav {text-align:center; background-color:#333; color: white; padding:20px; margin-top:-10px;}
 h1 {text-align: center;}
