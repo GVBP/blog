@@ -19,17 +19,8 @@ function loadPosts() {
                 var post = posts[i];
                 tituloBody.push({'numero' : i,'titulo' : post.title,'body' : post.body});
                 var index = Math.floor((Math.random() * 100) + 1);
-                var areaPost = document.createElement('div');////
+                var areaPost = document.createElement('div');
                 areaPost.setAttribute('class','card text-center');
-                    /*
-                    var imagePost = document.createElement('img');
-                    imagePost.classList.add('card-img-top');
-                    imagePost.setAttribute('src','http://placehold.it/750x300');
-                    imagePost.setAttribute('alt','Card image cap');
-                    imagePost.setAttribute('width', '723px');
-                    imagePost.setAttribute('height', '180px');
-                    areaPost.appendChild(imagePost);
-                    */
                     var header = document.createElement('div');
                     header.setAttribute('class', 'card-header');
                     header.innerHTML = "Featured";
@@ -161,7 +152,6 @@ function redirecionamento() {
 
 function postContato() {
     var nome = document.getElementById('uNome').value;
-    console.log('teste',nome);
     var email = document.getElementById('uEmail').value;
     var textArea = document.getElementById('uTextArea').value;
 
@@ -179,7 +169,7 @@ function postContato() {
     .then(response => response.json())
     .then(json => console.log(json))
 
-    nome.value = "";
-    email.value = "";
-    textArea.value = "";
+    document.getElementById('uNome').value = "";
+    document.getElementById('uEmail').value = "";
+    document.getElementById('uTextArea').value = "";
 }
