@@ -2,50 +2,50 @@ var tituloBody = [];
 
 function loadPosts() {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var posts = JSON.parse(this.responseText); // var 'posts' recebe todo o arquivo transformado do JSON para javaScript;
             var postsHtml = document.getElementById('comentarios'); // var 'postsHtml' recebe todo o conteúdo do elemento 'posts';
             var imagens = loadImages(); // var 'imagens' recebe todas as imagens da função 'loadImages()';
-            
+
             for (var i = 0; i < posts.length; i++) {
                 var post = posts[i];
-                tituloBody.push({'numero' : i,'titulo' : post.title,'body' : post.body});
+                tituloBody.push({ 'numero': i, 'titulo': post.title, 'body': post.body });
                 var index = Math.floor((Math.random() * 100) + 1);
                 var areaPost = document.createElement('div');
-                areaPost.setAttribute('class','card text-center');
-                    var header = document.createElement('div');
-                    header.setAttribute('class', 'card-header');
-                    header.innerHTML = "Featured";
-                    areaPost.appendChild(header);
-                    var cardBody = document.createElement('div');
-                        cardBody.setAttribute('class','card-body');
-                        var ddTitulo = document.createElement('h5');
-                        ddTitulo.setAttribute('class','card-title');
-                        ddTitulo.innerHTML = "<span>" + post.title + "</span>";
-                        cardBody.appendChild(ddTitulo);
-                        var ddPost = document.createElement('p');
-                        ddPost.setAttribute('class','card-text');
-                        ddPost.innerHTML = post.body + ".";
-                        cardBody.appendChild(ddPost);
-                        var botao = document.createElement("a");
-                        botao.setAttribute('class', 'p-2 text-muted');
-                        botao.setAttribute('href', 'http://127.0.0.1:5500/app/comments/comments.html');
-                        botao.setAttribute('role', 'button');
-                        botao.innerHTML = "Leia Mais &rarr;";
-                        cardBody.appendChild(botao);
-                    areaPost.appendChild(cardBody);
-                    var footerPost = document.createElement('div');
-                    footerPost.setAttribute('class', 'card-footer text-muted');
-                    footerPost.innerHTML = "Postado em Janeiro 1, 2018 por " + '"Usuário"';
-                    areaPost.appendChild(footerPost);
+                areaPost.setAttribute('class', 'card text-center');
+                var header = document.createElement('div');
+                header.setAttribute('class', 'card-header');
+                header.innerHTML = "Featured";
+                areaPost.appendChild(header);
+                var cardBody = document.createElement('div');
+                cardBody.setAttribute('class', 'card-body');
+                var ddTitulo = document.createElement('h5');
+                ddTitulo.setAttribute('class', 'card-title');
+                ddTitulo.innerHTML = "<span>" + post.title + "</span>";
+                cardBody.appendChild(ddTitulo);
+                var ddPost = document.createElement('p');
+                ddPost.setAttribute('class', 'card-text');
+                ddPost.innerHTML = post.body + ".";
+                cardBody.appendChild(ddPost);
+                var botao = document.createElement("a");
+                botao.setAttribute('class', 'p-2 text-muted');
+                botao.setAttribute('href', 'http://127.0.0.1:5500/app/comments/comments.html');
+                botao.setAttribute('role', 'button');
+                botao.innerHTML = "Leia Mais &rarr;";
+                cardBody.appendChild(botao);
+                areaPost.appendChild(cardBody);
+                var footerPost = document.createElement('div');
+                footerPost.setAttribute('class', 'card-footer text-muted');
+                footerPost.innerHTML = "Postado em Janeiro 1, 2018 por " + '"Usuário"';
+                areaPost.appendChild(footerPost);
                 postsHtml.appendChild(areaPost);
                 var linha = document.createElement('hr');
                 postsHtml.appendChild(linha);
             }
-        }				
+        }
     };
-    
+
     xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", false);
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
@@ -54,7 +54,7 @@ function loadPosts() {
 function loadImages() {
     var xhttp = new XMLHttpRequest();
     var images = [];
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var users = JSON.parse(this.responseText).results;
             for (var i = 0; i < users.length; i++) {
@@ -66,7 +66,7 @@ function loadImages() {
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.send();
 
-    return images;			
+    return images;
 }
 
 function moreComments() {
@@ -91,7 +91,7 @@ function formularios() {
     var nome = document.getElementById('nome').value;
     var comentarios = [];
 
-    comentarios.push({"msg":mensagem,"title":"testando","user":nome});
+    comentarios.push({ "msg": mensagem, "title": "testando", "user": nome });
 
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
@@ -105,8 +105,8 @@ function formularios() {
             "Content-type": "application/json; charset=UTF-8"
         }
     })
-    .then(response => response.json())
-    .then(json => console.log(json))
+        .then(response => response.json())
+        .then(json => console.log(json))
 
     for (var i = 0; i < comentarios.length; i++) {
         var areaComent = document.createElement('div');
@@ -118,11 +118,11 @@ function formularios() {
         var comentario = document.createElement('div');
         comentario.setAttribute('class', 'container');
         var titulo = document.createElement('h5');
-        titulo.setAttribute('class','card-title');
+        titulo.setAttribute('class', 'card-title');
         titulo.innerHTML = comentarios[i].user;
         comentario.appendChild(titulo);
         var body = document.createElement('p');
-        body.setAttribute('class','card-text');
+        body.setAttribute('class', 'card-text');
         body.innerText = comentarios[i].msg;
         comentario.appendChild(body);
         areaComent.appendChild(comentario);
@@ -152,16 +152,16 @@ function postContato() {
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
-            user : nome,
-            title : email,
-            body : textArea
+            user: nome,
+            title: email,
+            body: textArea
         }),
         headers: {
-            'Content-type' : 'Application/json; charset=UTF-8'
+            'Content-type': 'Application/json; charset=UTF-8'
         }
     })
-    .then(response => response.json())
-    .then(json => console.log(json))
+        .then(response => response.json())
+        .then(json => console.log(json))
 
     document.getElementById('uNome').value = "";
     document.getElementById('uEmail').value = "";

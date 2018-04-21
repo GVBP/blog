@@ -1,6 +1,6 @@
 head {padding:0; margin:0;}
-body {font-family:'handlee', cursive; padding:10px; margin:0px;}
-header {background-color: #1abc9c; padding:20px; margin-top:-10px;}
+body {font-family:'Roboto', sans-serif; padding:10px; margin:0px;}
+header {padding:20px; margin-top:-10px;color: white;}
 header #img-perfil {border:3px solid white;border-radius:100px;}
 header img {display:block;margin:auto;width:128px;height:128px;}
 header p {text-align:center; margin-top:0px;font-size:25pt;}
@@ -12,9 +12,9 @@ textarea {resize:none;}
 div#comentarios {overflow: hidden;height:1440px}
 p {text-align: justify; padding: 7px;}
 dl {margin: 25px;}
-button[name=moreComments] {padding: 12px 28px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black;}
+button[name=moreComments] {padding: 12px 28px; background-color: #333; color: white; font-family: 'Roboto', sans-serif; box-shadow: 2px 2px 2px black;}
 div.bloco1 {background-color:lightgray; padding:20px; margin-top:10px;border-radius:10px; width: 750px;}
-button[type=button]#comentar {padding: 6px 14px; background-color: #333; color: white; font-family: 'hundlee', cursive; box-shadow: 2px 2px 2px black;}
+button[type=button]#comentar {padding: 6px 14px; background-color: #333; color: white; font-family: 'Roboto', sans-serif; box-shadow: 2px 2px 2px black;}
 span {color: #1abc9c;}
 nav {text-align:center; background-color:#333; color: white; padding:20px; margin-top:-10px;}
 h1 {text-align: center;}
