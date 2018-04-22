@@ -18,7 +18,7 @@
 <body class="container" onload="redirecionamento()">
 
     <!-- Barra de Navegação Inicio -->
-    <nav>
+    <nav class="nav-sticky">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="http://127.0.0.1:5500/index.html" role="tab" aria-controls="nav-home"
                 aria-selected="false">Home</a>
@@ -40,7 +40,7 @@
             <hr/>
             <h6 class="w3-text-grey">Postado em 1 de janeiro de 2018 às 12:00</h6>
             <hr/>
-            <img class="img-fluid img-thumbnail" src="http://placehold.it/900x300"></img>
+            <img class="img-fluid img-thumbnail img-preenchimento" src="http://placehold.it/900x300"></img>
             <hr/>
             <p id="conteudoPost"></p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Draw, no entanto, tornar-se cego, ou, no corpo de erro,
@@ -50,14 +50,15 @@
                 por um impedimento para odiá-lo, que o homem tinha sido cegado por tristezas, a própria das coisas, nada
                 é dito deles pelo tempo que ele está fugindo. Tempo para o prazer.</p>
             <hr/>
-            <div class="form-group" id="formulario">
+            <div class="container w-75 p-2" id="formulario">
                 <h3>Deixe um comentário:</h3>
                 <hr/>
                 <form class="form-group">
-                    <input class="form-control form-control-sm" id="nome" name="nome" type="text" placeholder="Digite seu nome.." />
-                    <br/>
-                    <textarea class="form-control form-control-sm" id="mensagem" rows="10" placeholder="Digite seu comentário.."></textarea>
-                    <br/>
+                    <div class="form-group">
+                        <input class="form-control form-control-sm" id="nome" name="nome" type="text" placeholder="Digite seu nome.."/>
+                        <br/>
+                        <textarea class="form-control form-control-sm" id="mensagem" rows="10" placeholder="Digite seu comentário.."></textarea>
+                    </div>
                     <button class="btn btn-outline-info" type="button" onclick="formularios()" id="bEnviar">Enviar</button>
                     <input id="bReset" class="btn btn-outline-info" type="reset" name="limpar" value="Limpar" />
                 </form>
