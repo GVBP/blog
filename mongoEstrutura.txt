@@ -1,0 +1,88 @@
+// Banco publico para
+
+users - {
+
+    _id : primaryKey,
+    name : string,
+    userName : string,
+    email : string,
+    password : string,
+    address : {
+        // street : string,
+        // city : string,
+        geo : {
+            lat : number,
+            lng : number
+        }
+    },
+    photo : number,
+    phone : number,
+}
+
+posts - {
+
+    userId : number,
+    _id : primaryKey,
+    Featured : string,
+    title : string,
+    body : string,
+    date : {
+        dateDay,
+        dateMonth,
+        dateYear
+    },
+    userName : string
+}
+
+comments - {
+
+    postId : number,
+    _id : primaryKey,
+    userName : string,
+    email : string,
+    body : string,
+    photo : number
+}
+
+// albums - {
+
+    userId : number,
+    _id : primaryKey,
+    title : string,
+    url : string,
+    photo : number
+}
+
+// photos - {
+
+    albumId : number,
+    _id : primaryKey,
+    url : photo
+}
+
+// Banco interno para comentarios
+
+....
+
+// Function aggregate
+
+{
+   $ lookup:
+     {
+       from: <coleção para participar>,
+       localField: <campo dos documentos de entrada>,
+       campo foreignField: <dos documentos da coleção "from">,
+       como: <campo da matriz de saída>
+     }
+}
+
+// Function para inserir um document na coleção
+
+  var myObj = {postId : 0, postTitle : "titulo", postBody : "body", postMonth : "mês", postDay : "dia", postYear : "ano", postUser : "nome do usuário do post"};
+  
+  console.log(myObj);
+
+  global.db.postsMongo(myObj, (err, result) => {
+    if (err) throw err;
+    console.log('1 document inserted');
+  });
