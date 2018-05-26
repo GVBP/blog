@@ -31,4 +31,4 @@ function photosMongo(item, callback) {
     global.conn.collection("photos").insertMany(item, callback);
 }
 
-module.exports = { findAll, postsMongo }
+module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo }

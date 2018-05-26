@@ -26,12 +26,12 @@ router.get('/loadUsersJson', function (req, res, next) {
           var name = user.name;
           var username = user.username;
           var email = user.email;
-          var address = user.address.geo;
+          var geo = user.address.geo;
           var phone = user.phone;
           var password = '';
           // Fim das variaveis
 
-          myObj.push({ _id, name, username, email, address, phone, password });          
+          myObj.push({ _id, name, username, email, geo, phone, password });          
         }
 
         console.log(myObj);
