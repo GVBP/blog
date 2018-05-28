@@ -16,7 +16,7 @@ router.get('/loadUsersJson', function (req, res, next) {
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         var users = JSON.parse(this.responseText); // var 'users' recebe todo o arquivo transformado do JSON para javaScript;
-
+    
         var myObj = [];
         for (var i = 0; i < users.length; i++) {
           var user = users[i];

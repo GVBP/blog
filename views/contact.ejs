@@ -4,7 +4,9 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title><%= title %></title>
+	<title>
+		<%= title %>
+	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="bootstrap/dist/cover/cover.css" />
@@ -14,61 +16,66 @@
 </head>
 
 <body class="text-center">
-		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-	<!-- Barra de Navegação Inicio -->
-	<header class="masthead mb-auto">
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<!-- Barra de Navegação Inicio -->
+		<header class="masthead mb-auto">
 
-            <div class="inner">
+			<div class="inner">
 
-                <h3 class="masthead-brand">Guilherme Victor
-                    <br/> Borges Pereira</h3>
-                <nav class="nav nav-masthead justify-content-center">
+				<h3 class="masthead-brand">Guilherme Victor
+					<br/> Borges Pereira</h3>
+				<nav class="nav nav-masthead justify-content-center">
 
-                    <a class="nav-link active" href="/">Home</a>
-                    <a class="nav-link" href="">Postagens</a>
-                    <a class="nav-link" href="/contact">Contato</a>
-                    <a class="nav-link" href="">Sobre Mim</a>
-                    <a class="btn btn-sm btn-secondary btn-login text-link-personalizado" href="/login" style="color: white">Login</a>
-                </nav>
-            </div>
-        </header>
-	<!-- Barra de Navegação Fim -->
+					<a class="nav-link" href="/">Home</a>
+					<a class="nav-link" href="/posts">Postagens</a>
+					<a class="nav-link active" href="/contact">Contato</a>
+					<a class="nav-link" href="/sobre">Sobre Mim</a>
+					<a class="btn btn-sm btn-secondary btn-login text-link-personalizado" href="/login" style="color: white">Login</a>
+				</nav>
+			</div>
+		</header>
+		<!-- Barra de Navegação Fim -->
 
-	<!-- Contato inicio -->
-	<div class="container" id="contato">
-		<h1 class="w3-text-grey w3-padding-16">Contato</h1>
-		<hr/>
-		<div class="container w-75 p-3">
-			<form class="form-group">
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<label for="uNome">Nome Completo</label>
-						<input id="uNome" class="form-control form-control-sm" type="text" name="nome" value="" placeholder="Insira seu nome.." size="66">
+		<!-- Contato inicio -->
+		<div class="container" id="contato">
+			<h1 class="w3-text-grey w3-padding-16">Contato</h1>
+			<hr/>
+			<div class="container w-75 p-3">
+				<form class="form-group">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="uNome">Nome Completo</label>
+							<input id="uNome" class="form-control form-control-sm" type="text" name="nome" value="" placeholder="Insira seu nome.." size="66">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="uEmail">Endereço de e-mail</label>
+							<input id="uEmail" class="form-control form-control-sm" type="email" name="email" value="" placeholder="Insira seu e-mail.."
+							 size="65.8">
+						</div>
 					</div>
-					<div class="form-group col-md-6">
-						<label for="uEmail">Endereço de e-mail</label>
-						<input id="uEmail" class="form-control form-control-sm" type="email" name="email" value="" placeholder="Insira seu e-mail.."
-						 size="65.8">
+					<div class="form-group">
+						<label for="uTextArea">Insira sua mensagem</label>
+						<textarea id="uTextArea" class="form-control" name="mensagem" rows="10" name="mensagem" placeholder="Digite sua mensagem aqui.."></textarea>
 					</div>
-				</div>
-				<div class="form-group">
-					<label for="uTextArea">Insira sua mensagem</label>
-					<textarea id="uTextArea" class="form-control" name="mensagem" rows="10" name="mensagem" placeholder="Digite sua mensagem aqui.."></textarea>
-				</div>
-				<button id="sPost" class="btn btn-outline-info" type="button" name="submit-post" onclick="postContato()" />Enviar</button>
-				<input id="bReset" class="btn btn-outline-info" type="reset" name="limpar" value="Limpar" />
-			</form>
+					<button id="sPost" class="btn btn-outline-info" type="button" name="submit-post" onclick="postContato()" />Enviar</button>
+					<input id="bReset" class="btn btn-outline-info" type="reset" name="limpar" value="Limpar" />
+				</form>
+			</div>
+			<hr/>
 		</div>
-		<hr/>
-	</div>
-	<!-- Contato Fim -->
+		<!-- Contato Fim -->
 
-	<!-- Rodapé inicio -->
-	<footer class="container">
-		<br/>&copy; 2018 - Blog. Todos os direitos reservados.
-	</footer>
-	<!-- Rodapé Fim -->
-</div>
+		<!-- Rodapé inicio -->
+		<footer class="mastfoot mt-auto">
+
+			<div class="inner">
+
+				<p>
+					<span>&copy; 2018</span> - Blog. Todos os direitos reservados.</p>
+			</div>
+		</footer>
+		<!-- Rodapé Fim -->
+	</div>
 </body>
 
 </html>
