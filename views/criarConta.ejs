@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/cover/cover.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap/dist/checkout/form-validation.css" />
+</head>
+
+<body class="bg-light">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+        <h1 class="h2 mb-3 font-weight-normal text-center">
+            <span><%= title %></span>
+        </h1>
+        <form class="needs-validation" novalidate>
+            <div class="col-md-12 mb-3">
+                <label for="name">Nome Completo</label>
+                <input type="text" class="form-control" id="name" placeholder="" value="" required />
+                <div class="invalid-feedback">Nome completo é requerido.</div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="username">Nome de Usuário</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required />
+                    <div class="invalid-feedback" style="width: 100%">Seu Nome de usuário é requerido.</div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="email">E-mail
+                    <span class="text-muted">(Opcional)</span>
+                </label>
+                <input type="email" class="form-control" id="email" placeholder="seunome@exemplo.com" />
+                <div class="invalid-feedback">
+                    Por favor, digite um endereço de e-mail válido.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" class="form-control" placeholder="Password" required />
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="repeatPassword">Digite Novamente</label>
+                    <input type="password" id="repeatPassword" class="form-control" placeholder="Password" required />
+                </div>
+            </div>
+            <div class="col-md-12 mb-3">
+                <label for="phone">Celular</label>
+                <input type="tel" class="form-control" id="phone" placeholder="(00) 00000-0000" required />
+                <div class="invalid-feedback">
+                    Por favor, digite seu número de celular.
+                </div>
+            </div>
+            <hr class="mb-3">
+            <div class="row justify-content-around mb-3">
+                <div class="col-md-3 mb-3">
+                    <a href="/">
+                        <input style="color: white" class="btn btn-primary btn-sm btn-block" value="Cancelar">
+                    </a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <button style="color: white" class="btn btn-primary btn-sm btn-block" type="submit">Criar a conta</button>
+                </div>
+            </div>
+        </form>
+        <footer class="mastfoot mt-auto text-center">
+
+            <div class="inner">
+
+                <p>
+                    <span>&copy; 2018</span> - Blog. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

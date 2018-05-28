@@ -1,0 +1,132 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover,
+span {
+  color: #009688;/* #fff;*/
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #009688;/* #fff;*/
+  border: .05rem solid #009688;/* #fff;*/
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #009688;/* #fff;*/
+  border: .05rem solid #009688;/* #fff;*/
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333 !important;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #009688;/* #fff;*/
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 47em; /*Editar este cara*/
+}
+
+
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0; /*Editar este cara*/
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #009688;/* #fff;*/
+  border-bottom-color: #009688;/* #fff;*/
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+@media (min-width:320px){body{height: 140%} .p-3{padding:0.5rem!important} .body-login{height: 125%;}}
+@media (min-width:375px){.nav-masthead .nav-link{margin-left: 2em;} body{height: 120%} .p-3{padding:1rem!important} .body-login{height: 115%;}}
+@media (min-width:425px){.nav-masthead .nav-link{margin-left: 0em;} body{height: 110%} .body-login{height: 115%;}}
+@media (min-width:768px){body{height: 100%} .body-login{height: 120%;}}
+@media (min-width:1024px){.cover-container{max-width: 752px;} .body-login{height: 100%;}}
+@media (min-width:1440px){.cover-container{max-width: 1168px;}}
+@media (min-width:2560px){.cover-container{max-width: 2288px;}}
+
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot, p, .text-link-personalizado {
+  color: rgba(255, 255, 255, .5);
+}
+
+.btn-login {
+  margin-left: 2em;
+}
+
+#img-perfil {
+  border:3px solid rgba(255, 255, 255, .5);border-radius:100px; margin-bottom: 3em;
+}

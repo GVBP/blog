@@ -3,301 +3,54 @@
 <html lang="pt-br">
 
 <head>
-	<title><%= title %></title>
-	<meta charset="UTF-8" />
-	<meta name="author" value="Guilherme" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
-  <link rel="stylesheet" href="/stylesheets/estilo.css" />
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-	<meta http-equiv="Access-Control-Allow-Origin" content="*">
-	<meta http-equiv="Access-Control-Allow-Credentials" content="true">
-	<script src="/javascripts/_postsScript.js"></script>
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <title>Blog - Home</title>
+    <meta charset="UTF-8" />
+    <meta name="author" value="Guilherme Victor Borges Pereira" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Acess-Control-Allow-Origin" content="*" />
+    <meta http-equiv="Acess-Control-Allow-Credentials" content="true" />
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/dist/cover/cover.css" />
 </head>
 
-<body class="container" onload="loadPosts()">
+<body class="text-center">
 
-	<!-- Header inicio -->
-	<header class="container w3-teal">
-		<img id="img-perfil" alt="perfil" src="/images/perfil.png" />
-		<p>Guilherme Victor Borges Pereira</p>
-	</header>
-	<!-- Header fim -->
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-	<!-- Barra de Navegação Inicio -->
-	<nav class="nav-sticky">
-		<div class="nav nav-tabs" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="/" role="tab"
-			 aria-controls="nav-home" aria-selected="true">Home</a>
-			<a class="nav-item nav-link" id="myTab a" data-toggle="tab" href="/posts" role="tab"
-			 aria-controls="nav-postagem" aria-selected="false">Postagem</a>
-			<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="/contact"
-			 role="tab" aria-controls="nav-contact" aria-selected="false">Contato</a>
-		</div>
-	</nav>
-	<!-- Barra de Navegação Fim -->
+        <header class="masthead mb-auto">
 
-	<!-- Sobre Mim Inicio -->
-	<div class="container">
-		<h1 class="w3-text-grey w3-padding-16">Sobre Mim</h1>
-		<hr/>
-		<div class="container">
-			<p>
-				<i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
-				<font style="vertical-align: inherit;">Jovem Aprendiz - TOTVS</font>
-				&nbsp;&nbsp; / &nbsp;&nbsp;
-				<i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
-				<font style="vertical-align: inherit;">Joinville, Brasil</font>
-				&nbsp;&nbsp; / &nbsp;&nbsp;
-				<i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
-				<font style="vertical-align: inherit;">guilhermevictor.bp@gmail.com</font>
-				&nbsp;&nbsp; / &nbsp;&nbsp;
-				<i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
-				<font style="vertical-align: inherit;">(47) 98849-3345</font>
-			</p>
-		</div>
-		<hr/>
-		<div class="card-title">
-			<h2 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal">
-				</i>
-				Experiência de Trabalho
-			</h2>
-			<div class="card-text">
-				<h5 class="w3-opacity">
-					<b>Aprendiz - Tecnologias WEB / TOTVS</b>
-				</h5>
-				<h6 class="w3-text-teal">
-					<i class="fa fa-calendar fa-fw w3-margin-right"></i>
-					Mar 2018 -
-					<span class="w3-tag w3-teal w3-round" style="height:24px;">Atualmente</span>
-				</h6>
-				<p>
-					Atualmente planejo um Blog para treinamento de tecnologia WEB. Desenvolvendo habilidades com FrontEnd e BackEnd.
-					Ferramentas e conhecimentos utilizados e aprendidos ao longo desse treinamento: 
-					<ul style="list-style-type:none" class="w3-text-teal">
-						<ul style="list-style-type:circle;">
-							<li>Linguagens - HTML, CSS e JavaScript</li>
-							<li>Sintaxe JSON</li>
-							<li>Métodos HTTP</li>
-							<li>Utilização da ferramenta Git Bash</li>
-							<li>Implementação de Bootstrap</li>
-						</ul>
-					</ul>
-				</p>
-			</div>
-			<hr/>
-		</div>
-		<div class="card-title">
-			<h2 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal">
-				</i>
-				Educação
-			</h2>
-			<div class="card-text">
-				<h5 class="w3-opacity">
-					<b>Curso de Algoritmo / CursoemVideo.com</b>
-				</h5>
-				<h6 class="w3-text-teal">
-					<i class="fa fa-calendar fa-fw w3-margin-right"></i>
-					Dez 2017 - Jan 2018
-				</h6>
-				<p>
-					<b>Curso de Algoritmo</b> promovido pelo site
-					<b>CursoemVideo.com</b> no formato de curso livre online, com duração de 40 horas/aula.
-					<ul style="list-style-type:none" class="w3-text-teal">
-						<li>Assuntos abordados:</li>
-						<ul style="list-style-type:circle;">
-							<li>Introdução a Algoritmos</li>
-							<li>Comando de Entrada e Operadores</li>
-							<li>Estruturas Condicionais e Repetição</li>
-							<li>Rotinas</li>
-							<li>Arrays: Vetores e Matrizes</li>
-						</ul>
-					</ul>
-				</p>
-			</div>
-			<div class="card-text">
-				<h5 class="w3-opacity">
-					<b>Tecnologia Protheus / TIEducacional - TOTVS</b>
-				</h5>
-				<h6 class="w3-text-teal">
-					<i class="fa fa-calendar fa-fw w3-margin-right"></i>
-					Mar 2017 - Abr 2017
-				</h6>
-				<p>
-					<b>Curso de Tecnologia Protheus</b> promovido pela
-					<b>TIEducacional - TOTVS</b> realizado remotamente, com duração de 24 horas.
-					<ul style="list-style-type:none" class="w3-text-teal">
-						<li>Assuntos abordados:</li>
-						<ul style="list-style-type:circle;">
-							<li>Instalação;</li>
-							<li>Configuração;</li>
-							<li>Personalização técnica dos ambientes de trabalho do sistema e de bancos de dados no Sistema de Gestão da TOTVS – Protheus.</li>
-						</ul>
-					</ul>
-				</p>
-			</div>
-			<div class="card-text">
-				<h5 class="w3-opacity">
-					<b>Gestão Empresarial com Software de ERP Protheus / IOS - TOTVS</b>
-				</h5>
-				<h6 class="w3-text-teal">
-					<i class="fa fa-calendar fa-fw w3-margin-right"></i>
-					Ago 2016 - Nov 2016
-				</h6>
-				<p>
-					<b>Curso de Gestão Empresarial com Software de ERP</b> promovido pelo
-					<b>Instituto da Oportunidade Social - CESAVI
-					</b> realizado presencialmente com duração total de 284 horas.
-					<ul style="list-style-type:none" class="w3-text-teal">
-						<li>Assuntos abordados:</li>
-						<ul style="list-style-type:circle;">
-							<li>Teoria e Prática dos processos administrativos;</li>
-							<li>Pacote Office, Windows e Internet;</li>
-							<li>Comunicação e Expressão;</li>
-							<li>álculo Matemático;</li>
-							<li>ática no Software Protheus Módulos: Compras, Estoque, Faturamento e Financeiro.</li>
-						</ul>
-					</ul>
-				</p>
+            <div class="inner">
 
-			</div>
-			<hr/>
-			<div class="card-title">
-				<h2 class="w3-text-grey w3-padding-16">
-					<i class="fa fa-asterisk fa-fw w3-margin-right w3-xxlarge w3-text-teal">
-					</i>
-					Habilidades
-				</h2>
-				<div class="card-text">
-					<h5 class="w3-opacity">
-						<b>Office (Word, Excel e PowerPoint)</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">80%</font>
-							</font>
-						</div>
-					</div>
-					<h5 class="w3-opacity">
-						<b>Office (Access)</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">50%</font>
-							</font>
-						</div>
-					</div>
-					<h5 class="w3-opacity">
-						<b>HTML</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">60%</font>
-							</font>
-						</div>
-					</div>
-					<h5 class="w3-opacity">
-						<b>CSS</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">40%</font>
-							</font>
-						</div>
-					</div>
-					<h5 class="w3-opacity">
-						<b>JavaScript</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">50%</font>
-							</font>
-						</div>
-					</div>
-					<h5 class="w3-opacity">
-						<b>Java</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">40%</font>
-							</font>
-						</div>
-					</div>
-					<h5 class="w3-opacity">
-						<b>SQL</b>
-					</h5>
-					<div class="w3-light-grey w3-round-xlarge">
-						<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">
-							<font style="vertical-align:inherit;">
-								<font style="vertical-align:inherit;">40%</font>
-							</font>
-						</div>
-					</div>
-				</div>
-				<hr/>
-				<div class="card-title">
-					<h2 class="w3-text-grey w3-padding-16">
-						<i class="fa fa-globe fa-fw w3-margin-right w3-xxlarge w3-text-teal">
-						</i>
-						Línguas
-					</h2>
-					<div class="card-text">
-						<h5 class="w3-opacity">
-							<b>Português</b>
-						</h5>
-						<div class="w3-light-grey w3-round-xlarge">
-							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:100%">
-								<font style="vertical-align:inherit;">
-									<font style="vertical-align:inherit;">100%</font>
-								</font>
-							</div>
-						</div>
-						<h5 class="w3-opacity">
-							<b>Inglês</b>
-						</h5>
-						<div class="w3-light-grey w3-round-xlarge">
-							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">
-								<font style="vertical-align:inherit;">
-									<font style="vertical-align:inherit;">60%</font>
-								</font>
-							</div>
-						</div>
-						<h5 class="w3-opacity">
-							<b>Espanhol</b>
-						</h5>
-						<div class="w3-light-grey w3-round-xlarge">
-							<div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">
-								<font style="vertical-align:inherit;">
-									<font style="vertical-align:inherit;">50%</font>
-								</font>
-							</div>
-						</div>
-						<hr/>
-					</div>
-				</div>
-			</div>
-		</div>
-				<!-- Sobre Mim Fim -->
+                <h3 class="masthead-brand">Guilherme Victor
+                    <br/> Borges Pereira</h3>
+                <nav class="nav nav-masthead justify-content-center">
 
-				<!-- Rodapé inicio -->
-				<footer class="container">
-					&copy; 2018 - Blog. Todos os direitos reservados.
-				</footer>
-				<!-- Rodapé Fim -->
-	</div>
+                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link" href="">Postagens</a>
+                    <a class="nav-link" href="/contact">Contato</a>
+                    <a class="nav-link" href="">Sobre Mim</a>
+                    <a class="btn btn-sm btn-secondary btn-login text-link-personalizado" href="/login" style="color: white">Login</a>
+                </nav>
+            </div>
+        </header>
+        <main role="main" class="inner cover">
+
+            <img id="img-perfil" src="images/perfil.png" alt="perfil" />
+            <h1 class="cover-heading">BEM-VINDO AO MEU BLOG</h1>
+            <p class="lead">Olá, Agradeço sua visita. Meu nome é
+                <span>Guilherme Victor Borges Pereira</span> e eu desenvolvi este blog para mostar um pouco sobre meu trabalho
+                de desenvolvedor Web.</p>
+        </main>
+        <footer class="mastfoot mt-auto">
+
+            <div class="inner">
+
+                <p>
+                    <span>&copy; 2018</span> - Blog. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

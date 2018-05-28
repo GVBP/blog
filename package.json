@@ -5,6 +5,8 @@
   "scripts": {
     "start": "nodemon ./bin/www"
   },
+  "author": "Guilherme Victor Borges Pereira",
+  "license": "ISC",
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -13,6 +15,7 @@
     "http-errors": "~1.6.2",
     "mongodb": "^3.0.8",
     "morgan": "~1.9.0",
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
+    "bootstrap": "^4.1.1"
   }
 }

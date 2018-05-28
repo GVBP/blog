@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts');
 var contatoRouter = require('./routes/contato');
+var loginRouter = require('./routes/login');
+var criarContaRouter = require('./routes/criarConta');
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/login', loginRouter);
+app.use('/criarConta', criarContaRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/contact', contatoRouter);

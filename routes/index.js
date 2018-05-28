@@ -109,13 +109,13 @@ router.get('/loadCommentsJson', function (req, res, next) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        var comments = JSON.parse(this.responseText); // var 'users' recebe todo o arquivo transformado do JSON para javaScript;
+        var comments = JSON.parse(this.responseText); // var 'comments' recebe todo o arquivo transformado do JSON para javaScript;
 
         var myObj = [];
         for (var i = 0; i < comments.length; i++) {
           var comment = comments[i];
 
-          // Variaveis do users
+          // Variaveis do comments
           var postId = comment.postId;
           var _id = comment.id;
           var username = '';
@@ -152,13 +152,13 @@ router.get('/loadAlbumsJson', function (req, res, next) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        var albums = JSON.parse(this.responseText); // var 'users' recebe todo o arquivo transformado do JSON para javaScript;
+        var albums = JSON.parse(this.responseText); // var 'albums' recebe todo o arquivo transformado do JSON para javaScript;
 
         var myObj = [];
         for (var i = 0; i < albums.length; i++) {
           var album = albums[i];
 
-          // Variaveis do users
+          // Variaveis do albums
           var userId = album.userId;
           var _id = album.id;
           var title = album.title;
@@ -194,13 +194,13 @@ router.get('/loadPhotosJson', function (req, res, next) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        var photos = JSON.parse(this.responseText); // var 'users' recebe todo o arquivo transformado do JSON para javaScript;
+        var photos = JSON.parse(this.responseText); // var 'photos' recebe todo o arquivo transformado do JSON para javaScript;
 
         var myObj = [];
         for (var i = 0; i < photos.length; i++) {
           var photo = photos[i];
 
-          // Variaveis do users
+          // Variaveis do photos
           var albumId = photo.albumId;
           var _id = photo.id;
           var url = photo.url;
