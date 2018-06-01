@@ -4,9 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>
-		<%= title %>
-	</title>
+	<title><%= title %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -16,9 +14,10 @@
 	<link rel="stylesheet" href="/bootstrap/dist/cover/cover.css" />
 </head>
 
-<body onload="loadPosts()">
+<body>
 
 	<!-- Inicio do Header -->
+
 	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
 		<header class="masthead mb-auto">
@@ -37,9 +36,10 @@
 				</nav>
 			</div>
 		</header>
+
 		<!-- Fim do Header -->
 
-		<!-- Comentários inicio -->
+		<!-- Inicio Comentários -->
 
 		<div id="divAling" class="container">
 			<div class="container" id="comentarios">
@@ -47,24 +47,41 @@
 					<%= title %>
 				</h1>
 				<hr/>
-				<!--
-			<div class="bloco1">
-				<div>
-					<p>Nome: </p><br/>
-					<p>Título: </p>
-					<p>
-						<textarea placeholder="Adicione seu post" width="10px" height="10px"></textarea>
-					</p>
-				</div>
-			</div>
-			-->
+
+				<% docs.forEach(function(item) { %>
+
+					<div class="card text-center">
+						<div class="card-header">
+							<p>Featured</p>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">
+								<span>
+									<%= item.title %>
+								</span>
+							</h5>
+							<p class="card-text">
+								<%= item.body %>
+							</p>
+							<a class="p-2 text-muted" href="/posts/comments" role="button">Leia Mais &rarr;</a>
+						</div>
+						<div class="card-footer text-muted">
+							<p>Postado em <%= item.date.dateMonth %> <%= item.date.dateDay %>, <%= item.date.dateYear %> por "Usuário"</p>
+						</div>
+						<hr/>
+					</div>
+
+					<% }) %>
+
 			</div>
 			<br/>
-			<button type="button" name="moreComments" onclick="moreComments()">Mostrar Mais</button>
+			<!-- <button type="button" name="moreComments" onclick="moreComments()">Mostrar Mais</button> -->
 		</div>
-		<!-- Comentários Fim -->
 
-		<!-- Rodapé inicio -->
+		<!-- Fim Comentários -->
+
+		<!-- inicio Rodapé -->
+
 		<footer class="mastfoot mt-auto">
 
 			<div class="inner">
@@ -73,7 +90,8 @@
 					<span>&copy; 2018</span> - Blog. Todos os direitos reservados.</p>
 			</div>
 		</footer>
-		<!-- Rodapé Fim -->
+
+		<!-- Fim Rodapé -->
 	</div>
 </body>
 

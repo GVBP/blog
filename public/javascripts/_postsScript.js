@@ -12,6 +12,7 @@ function loadPosts() {
                 var post = posts[i];
                 tituloBody.push({ 'numero': i, 'titulo': post.title, 'body': post.body });
                 var index = Math.floor((Math.random() * 100) + 1);
+                //----------------------------------------------
                 var areaPost = document.createElement('div');
                 areaPost.setAttribute('class', 'card text-center');
                 var header = document.createElement('div');
