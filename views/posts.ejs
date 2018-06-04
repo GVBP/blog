@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
 	<meta http-equiv="Access-Control-Allow-Origin" content="*">
 	<meta http-equiv="Access-Control-Allow-Credentials" content="true">
-	<script src="/javascripts/_postsScript.js"></script>
+	<!--script src="/javascripts/_postsScript.js"></script-->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 	<link rel="stylesheet" href="/bootstrap/dist/cover/cover.css" />
 </head>
@@ -47,9 +47,7 @@
 					<%= title %>
 				</h1>
 				<hr/>
-
-				<% docs.forEach(function(item) { %>
-
+				<% docs.forEach(function(doc) { %>
 					<div class="card text-center">
 						<div class="card-header">
 							<p>Featured</p>
@@ -57,21 +55,25 @@
 						<div class="card-body">
 							<h5 class="card-title">
 								<span>
-									<%= item.title %>
+									<%= doc.title %>
 								</span>
 							</h5>
 							<p class="card-text">
-								<%= item.body %>
+								<%= doc.body %>
 							</p>
 							<a class="p-2 text-muted" href="/posts/comments" role="button">Leia Mais &rarr;</a>
 						</div>
 						<div class="card-footer text-muted">
-							<p>Postado em <%= item.date.dateMonth %> <%= item.date.dateDay %>, <%= item.date.dateYear %> por "Usuário"</p>
+							<p>
+								<%= doc.date.dateMonth %> 
+								<%= doc.date.dateDay %>
+								<%= doc.date.dateYear %>
+							</p>
 						</div>
-						<hr/>
 					</div>
+					<hr/>
 
-					<% }) %>
+				<% }) %>
 
 			</div>
 			<br/>
