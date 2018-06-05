@@ -45,9 +45,7 @@ function photosMongo(item, callback) {
 
 // Junta posts c/ users
 function findAllPosts(callback) {
-    var posts = global.conn.collection('posts');
-    var users = global.conn.collection('users');
-    posts.aggregate([
+    global.conn.collection('posts').aggregate([
         {
             $lookup:
             {
@@ -56,7 +54,8 @@ function findAllPosts(callback) {
                 foreignField: '_id',
                 as: 'user'
             }
-        }
+        },
+        { "$unwind": "$user" }
     ]).toArray(callback);
 }
 
