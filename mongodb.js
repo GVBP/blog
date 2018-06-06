@@ -8,10 +8,11 @@ MongoClient.connect(url)
 */
 
 var mongoClient = require('mongodb').MongoClient;
+
 mongoClient.connect('mongodb://localhost:27017/blog')
     .then(conn => global.conn = conn.db('blog'))
     .catch(err => console.log(err)
-    .then(conn.db.close()))
+        .then(conn.db.close()))
 
 // Encontra autor
 function findAll(callback) {
@@ -48,15 +49,36 @@ function findAllPosts(callback) {
     global.conn.collection('posts').aggregate([
         {
             $lookup:
-            {
-                from: 'users',
-                localField: 'userId',
-                foreignField: '_id',
-                as: 'user'
-            }
+                {
+                    from: 'users',
+                    localField: 'userId',
+                    foreignField: '_id',
+                    as: 'user'
+                }
         },
         { "$unwind": "$user" }
     ]).toArray(callback);
 }
 
-module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo, findAllPosts }
+// Função para mostrar mais informações do Post
+var ObjectId = require("mongodb").ObjectId;
+function findOnePost(id, callback) {
+    console.log(id);
+    var testeArray = 
+    global.conn.collection('posts').aggregate(
+        {
+            $lookup:
+                {
+                    from: 'users',
+                    localField: 'userId',
+                    foreignField: '_id',
+                    as: 'user'
+                }
+        },
+        { "$unwind": "$user" },
+        { $match : { "_id" : id } }
+    );
+    console.log('teste', testeArray);
+}
+
+module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo, findAllPosts, findOnePost }

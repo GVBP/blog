@@ -9,8 +9,12 @@ router.get('/', function (req, res) {
       });
     });
 
-router.get('/comments', function (req, res, next) {
-    res.render('comments', { title: "Comentários" });
+router.get('/comments/:id', function (req, res) {
+    var id = req.params.id;
+    global.db.findOnePost( id,(e, doc) => {
+        if (e) { return console.log(e); }
+        res.render('comments', { title: "Comentários", doc });
+    });
 });
 
 module.exports = router;

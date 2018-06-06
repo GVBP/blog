@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -16,74 +18,76 @@
 <body>
 
     <!-- Inicio do Header -->
-	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-		<header class="masthead mb-auto">
+        <header class="masthead mb-auto">
 
-			<div class="inner">
+            <div class="inner">
 
-				<h3 class="masthead-brand">Guilherme Victor
-					<br/> Borges Pereira</h3>
-				<nav class="nav nav-masthead justify-content-center">
+                <h3 class="masthead-brand">Guilherme Victor
+                    <br/> Borges Pereira</h3>
+                <nav class="nav nav-masthead justify-content-center">
 
-					<a class="nav-link" href="/">Home</a>
-					<a class="nav-link active" href="/posts">Postagens</a>
-					<a class="nav-link" href="/contact">Contato</a>
-					<a class="nav-link" href="/sobre">Sobre Mim</a>
-					<a class="btn btn-sm btn-secondary btn-login text-link-personalizado" href="/login" style="color: white">Login</a>
-				</nav>
-			</div>
-		</header>
-		<!-- Fim do Header -->
-
-    <!-- Postagem Inicio -->
-    <div id="divAling" class="container">
-        <div class="container" id="postagem">
-            <h1 id="tituloPost" class="w3-text-grey w3-padding-16">Título da Postagem</h1>
-            <h5 class="w3-text-grey">por
-                <span class="w3-text-teal">"Usuário"</span>
-            </h5>
-            <hr/>
-            <h6 class="w3-text-grey">Postado em 1 de janeiro de 2018 às 12:00</h6>
-            <hr/>
-            <img class="img-fluid img-thumbnail img-preenchimento" src="http://placehold.it/900x300"></img>
-            <hr/>
-            <p id="conteudoPost"></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Draw, no entanto, tornar-se cego, ou, no corpo de erro,
-                bem como ser eleito neles, o sábio, o grande, porque ninguém é frequentemente aceite o meu trabalho, alguns
-                compostos não é menos para o inventor da excepturi?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Por exemplo, o trabalho, e de dor nasceu está vinculado
-                por um impedimento para odiá-lo, que o homem tinha sido cegado por tristezas, a própria das coisas, nada
-                é dito deles pelo tempo que ele está fugindo. Tempo para o prazer.</p>
-            <hr/>
-            <div class="container w-75 p-2" id="formulario">
-                <h3>Deixe um comentário:</h3>
-                <hr/>
-                <form class="form-group">
-                    <div class="form-group">
-                        <input class="form-control form-control-sm" id="nome" name="nome" type="text" placeholder="Digite seu nome.."/>
-                        <br/>
-                        <textarea class="form-control form-control-sm" id="mensagem" rows="10" placeholder="Digite seu comentário.."></textarea>
-                    </div>
-                    <button class="btn btn-outline-info" type="button" onclick="formularios()" id="bEnviar">Enviar</button>
-                    <input id="bReset" class="btn btn-outline-info" type="reset" name="limpar" value="Limpar" />
-                </form>
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link active" href="/posts">Postagens</a>
+                    <a class="nav-link" href="/contact">Contato</a>
+                    <a class="nav-link" href="/sobre">Sobre Mim</a>
+                    <a class="btn btn-sm btn-secondary btn-login text-link-personalizado" href="/login" style="color: white">Login</a>
+                </nav>
             </div>
-            <hr/>
+        </header>
+        <!-- Fim do Header -->
+
+        <!-- Postagem Inicio -->
+        <div id="divAling" class="container">
+            <div class="container" id="postagem">
+                    <%- JSON.stringify(doc); %>
+                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16">Titulo da postagem</h1>
+                    <h5 class="w3-text-grey">por
+                        <span class="w3-text-teal">"Usuário"</span>
+                    </h5>
+                    <hr/>
+                    <h6 class="w3-text-grey">Postado em 1 de janeiro de 2018 às 12:00</h6>
+                    <hr/>
+                    <img class="img-fluid img-thumbnail img-preenchimento" src="http://placehold.it/900x300"></img>
+                    <hr/>
+                    <p id="conteudoPost"></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Draw, no entanto, tornar-se cego, ou, no corpo
+                        de erro, bem como ser eleito neles, o sábio, o grande, porque ninguém é frequentemente aceite o meu
+                        trabalho, alguns compostos não é menos para o inventor da excepturi?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Por exemplo, o trabalho, e de dor nasceu está
+                        vinculado por um impedimento para odiá-lo, que o homem tinha sido cegado por tristezas, a própria
+                        das coisas, nada é dito deles pelo tempo que ele está fugindo. Tempo para o prazer.</p>
+                    <hr/>
+                    <div class="container w-75 p-2" id="formulario">
+                        <h3>Deixe um comentário:</h3>
+                        <hr/>
+                        <form class="form-group">
+                            <div class="form-group">
+                                <input class="form-control form-control-sm" id="nome" name="nome" type="text" placeholder="Digite seu nome.." />
+                                <br/>
+                                <textarea class="form-control form-control-sm" id="mensagem" rows="10" placeholder="Digite seu comentário.."></textarea>
+                            </div>
+                            <button class="btn btn-outline-info" type="button" onclick="formularios()" id="bEnviar">Enviar</button>
+                            <input id="bReset" class="btn btn-outline-info" type="reset" name="limpar" value="Limpar" />
+                        </form>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- Postagem Fim -->
+        <!-- Postagem Fim -->
 
-    <!-- Rodapé inicio -->
-		<footer class="mastfoot mt-auto">
+        <!-- Rodapé inicio -->
+        <footer class="mastfoot mt-auto">
 
-			<div class="inner">
+            <div class="inner">
 
-				<p>
-					<span>&copy; 2018</span> - Blog. Todos os direitos reservados.</p>
-			</div>
-		</footer>
-		<!-- Rodapé Fim -->
+                <p>
+                    <span>&copy; 2018</span> - Blog. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+        <!-- Rodapé Fim -->
 
 </body>
 
