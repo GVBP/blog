@@ -60,25 +60,4 @@ function findAllPosts(callback) {
     ]).toArray(callback);
 }
 
-// Função para mostrar mais informações do Post
-var ObjectId = require("mongodb").ObjectId;
-function findOnePost(id, callback) {
-    console.log(id);
-    var testeArray = 
-    global.conn.collection('posts').aggregate(
-        {
-            $lookup:
-                {
-                    from: 'users',
-                    localField: 'userId',
-                    foreignField: '_id',
-                    as: 'user'
-                }
-        },
-        { "$unwind": "$user" },
-        { $match : { "_id" : id } }
-    );
-    console.log('teste', testeArray);
-}
-
-module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo, findAllPosts, findOnePost }
+module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo, findAllPosts }

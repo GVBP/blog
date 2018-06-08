@@ -5,15 +5,20 @@ var router = express.Router();
 router.get('/', function (req, res) {
     global.db.findAllPosts((e, docs) => {
         if (e) { return console.log(e); }
+        console.log("teste", docs);
         res.render('posts', { title: 'Postagens', docs });
       });
     });
 
-router.get('/comments/:id', function (req, res) {
+router.get('/:id', function (req, res) {
     var id = req.params.id;
-    global.db.findOnePost( id,(e, doc) => {
+    global.db.findAllPosts((e, docs) => {
         if (e) { return console.log(e); }
-        res.render('comments', { title: "Comentários", doc });
+        docs.forEach(function(doc) {
+            if(doc._id == id) {
+                res.render('comments', { title: "Comentários", doc });
+            }
+        });
     });
 });
 

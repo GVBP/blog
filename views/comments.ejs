@@ -41,23 +41,18 @@
         <!-- Postagem Inicio -->
         <div id="divAling" class="container">
             <div class="container" id="postagem">
-                    <%- JSON.stringify(doc); %>
-                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16">Titulo da postagem</h1>
+                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16"><%= doc.title %></h1>
                     <h5 class="w3-text-grey">por
-                        <span class="w3-text-teal">"Usuário"</span>
+                        <span class="w3-text-teal">"<%= doc.user.username %>"</span>
                     </h5>
                     <hr/>
-                    <h6 class="w3-text-grey">Postado em 1 de janeiro de 2018 às 12:00</h6>
+                    <h6 class="w3-text-grey">Postado em <%= doc.date.dateDay %> de <%= doc.date.dateMonth %> de <%= doc.date.dateYear %></h6>
                     <hr/>
                     <img class="img-fluid img-thumbnail img-preenchimento" src="http://placehold.it/900x300"></img>
                     <hr/>
                     <p id="conteudoPost"></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Draw, no entanto, tornar-se cego, ou, no corpo
-                        de erro, bem como ser eleito neles, o sábio, o grande, porque ninguém é frequentemente aceite o meu
-                        trabalho, alguns compostos não é menos para o inventor da excepturi?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Por exemplo, o trabalho, e de dor nasceu está
-                        vinculado por um impedimento para odiá-lo, que o homem tinha sido cegado por tristezas, a própria
-                        das coisas, nada é dito deles pelo tempo que ele está fugindo. Tempo para o prazer.</p>
+                    <p><%= doc.body %></p>
+                    <p><%= doc.body %></p>
                     <hr/>
                     <div class="container w-75 p-2" id="formulario">
                         <h3>Deixe um comentário:</h3>

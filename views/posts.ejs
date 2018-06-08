@@ -47,7 +47,6 @@
 					<%= title %>
 				</h1>
 				<hr/>
-				<% console.log(docs) %>
 				<% docs.forEach(function(doc) { %>
 					<div class="card text-center">
 						<div class="card-header">
@@ -62,7 +61,7 @@
 							<p class="card-text">
 								<%= doc.body %>
 							</p>
-							<a class="p-2 text-muted" href="/posts/comments/<%= doc._id %>" role="button">Leia Mais &rarr;</a>
+							<a class="p-2 text-muted" href="/posts/<%= doc._id %>" role="button">Leia Mais &rarr;</a>
 						</div>
 						<div class="card-footer text-muted">
 							<p>
@@ -73,7 +72,7 @@
 								de
 								<%= doc.date.dateYear %>
 								por
-								<span>"<%- doc.user.name %>"</span>.
+								<span>"<%= doc.user.username %>"</span>.
 							</p>
 						</div>
 					</div>

@@ -120,7 +120,7 @@ router.get('/loadCommentsJson', function (req, res, next) {
           var _id = comment.id;
           var username = '';
           var email = comment.email;
-          var body = comment.body;
+          var body = comment.body.replace(/\n/g, ' ');
           var photo = '';
           // Fim das variaveis
 
