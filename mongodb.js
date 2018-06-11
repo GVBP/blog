@@ -1,14 +1,4 @@
-// Tem que selecionar a base de dados para visualizar.
-
-/*var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/blog";
-MongoClient.connect(url)
-    .then(conn => global.conn = conn.db('blog'))
-    .catch(err => console.log(err))
-*/
-
-var mongoClient = require('mongodb').MongoClient;
-
+const mongoClient = require('mongodb').MongoClient;
 mongoClient.connect('mongodb://localhost:27017/blog')
     .then(conn => global.conn = conn.db('blog'))
     .catch(err => console.log(err)
@@ -60,4 +50,12 @@ function findAllPosts(callback) {
     ]).toArray(callback);
 }
 
-module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo, findAllPosts }
+function teste(id, callback) {
+    var post = global.conn.collection('posts').find({ _id : Number(id) });
+    var user = global.conn.collection('users').find({ _id : Number(post.userId) });
+    var c = global.conn.collection('posts').find({ _id : Number(id) });
+    var obj = { 'post' : { post, 'user':{user} }};
+    return callback(obj);
+    };
+
+module.exports = { findAll, usersMongo, postsMongo, commentsMongo, albumsMongo, photosMongo, findAllPosts, teste }

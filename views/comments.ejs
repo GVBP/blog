@@ -41,18 +41,18 @@
         <!-- Postagem Inicio -->
         <div id="divAling" class="container">
             <div class="container" id="postagem">
-                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16"><%= doc.title %></h1>
+                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16"><%# doc.title %></h1>
                     <h5 class="w3-text-grey">por
-                        <span class="w3-text-teal">"<%= doc.user.username %>"</span>
+                        <span class="w3-text-teal">"<%= doc.username %>"</span>
                     </h5>
                     <hr/>
-                    <h6 class="w3-text-grey">Postado em <%= doc.date.dateDay %> de <%= doc.date.dateMonth %> de <%= doc.date.dateYear %></h6>
+                    <h6 class="w3-text-grey">Postado em <%# doc.date.dateDay %> de <%# doc.date.dateMonth %> de <%# doc.date.dateYear %></h6>
                     <hr/>
                     <img class="img-fluid img-thumbnail img-preenchimento" src="http://placehold.it/900x300"></img>
                     <hr/>
                     <p id="conteudoPost"></p>
-                    <p><%= doc.body %></p>
-                    <p><%= doc.body %></p>
+                    <p><%# doc.body %></p>
+                    <p><%# doc.body %></p>
                     <hr/>
                     <div class="container w-75 p-2" id="formulario">
                         <h3>Deixe um comentário:</h3>

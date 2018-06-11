@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
         res.render('posts', { title: 'Postagens', docs });
       });
     });
-
+/*
 router.get('/:id', function (req, res) {
     var id = req.params.id;
     global.db.findAllPosts((e, docs) => {
@@ -21,5 +21,13 @@ router.get('/:id', function (req, res) {
         });
     });
 });
+*/
+router.get('/:id', function (req, res) {
+    var id = req.params.id;
+    global.db.teste(id, (e, doc) => {
+        if (e) { return console.log(e); }
+            res.render('comments', { title: "Comentários", doc });
+        });
+    });
 
 module.exports = router;
