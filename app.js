@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+// Carrega as routes para as vars
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts');
@@ -20,12 +21,15 @@ app.engine('html', require('ejs').renderFile);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// O 'use' serve para adicionar middlewares, ou seja recursos que serão
+// emparelhados quando a requisição acontecer
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
+// Rotas que vão ser usadas + as variáveis que contém os caminhos das routes
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/criarConta', criarContaRouter);
