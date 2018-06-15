@@ -1,5 +1,5 @@
 /*
- * Arquivo de conecção com o mongodb
+ * Arquivo de conexão com o mongodb
  * Requisito: mongoose@4.6.5
  */
 
