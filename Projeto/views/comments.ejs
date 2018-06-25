@@ -41,9 +41,9 @@
         <!-- Postagem Inicio -->
         <div id="divAling" class="container">
             <div class="container" id="postagem">
-                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16"><%# doc.title %></h1>
+                    <h1 id="tituloPost" class="w3-text-grey w3-padding-16"><%= doc.title %></h1>
                     <h5 class="w3-text-grey">por
-                        <span class="w3-text-teal">"<%= doc.username %>"</span>
+                        <span class="w3-text-teal">"<%# doc.username %>"</span>
                     </h5>
                     <hr/>
                     <h6 class="w3-text-grey">Postado em <%# doc.date.dateDay %> de <%# doc.date.dateMonth %> de <%# doc.date.dateYear %></h6>

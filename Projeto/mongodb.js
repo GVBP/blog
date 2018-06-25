@@ -52,6 +52,7 @@ function findAllPosts(callback) {
 
 function teste(id, callback) {
     var post = global.conn.collection('posts').find({ _id : Number(id) });
+    debugger;
     var user = global.conn.collection('users').find({ _id : Number(post.userId) });
     var c = global.conn.collection('posts').find({ _id : Number(id) });
     var obj = { 'post' : { post, 'user':{user} }};

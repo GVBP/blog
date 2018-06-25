@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-//global.db = require('../mongodb');
+global.db = require('../mongodb');
 
 /**
  * Module dependencies.
