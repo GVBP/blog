@@ -13,7 +13,7 @@ export let config: Config = {
         },
     },
 
-    specs: ['../contato/specs/ContatoSpec.js'],
+    specs: ['../contato/specs/ContatoSpec.js', '../contato/specs/ContatoLinkSpec.js'],
 
     baseUrl: 'http://localhost:3000/',
 

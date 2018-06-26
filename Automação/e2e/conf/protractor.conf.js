@@ -11,7 +11,7 @@ exports.config = {
             ],
         },
     },
-    specs: ['../contato/specs/ContatoSpec.js'],
+    specs: ['../contato/specs/ContatoSpec.js', '../contato/specs/ContatoLinkSpec.js'],
     baseUrl: 'http://localhost:3000/',
     onPrepare: () => {
         protractor_1.browser.ignoreSynchronization = true;
