@@ -5,7 +5,7 @@ describe("Verificação da página Contato", () => {
 
     const contatoPage = new ContatoPage()
     
-    beforeAll(() => {
+    beforeEach(() => {
         
         browser.get(browser.baseUrl)
 
@@ -23,16 +23,22 @@ describe("Verificação da página Contato", () => {
 
     })
 
-    it ("Escreve nome e e-mail", () => {
+    it ("Escreve nome", () => {
 
         contatoPage.digitaNome('Guilherme')
+
+        expect(contatoPage.pegaNome()).toEqual('Guilherme')
+
+        browser.sleep(1000)
+    })
+
+    it ("Escreve E-mail", () => {
+
         contatoPage.digitaEmail('guilherme@teste.com')
 
-        expect(contatoPage.pegaNome()).toEqual('Guilherme');
-        expect(contatoPage.pegaEmail()).toEqual('guilherme@teste.com');
+        expect(contatoPage.pegaEmail()).toEqual('guilherme@teste.com')
 
         browser.sleep(1000)
     })
 
 })
-

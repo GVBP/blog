@@ -2,15 +2,25 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const ContatoPage_1 = require("./../page-objects/ContatoPage");
 const protractor_1 = require("protractor");
-describe("teste", () => {
+describe("Verificação da página Contato", () => {
     const contatoPage = new ContatoPage_1.ContatoPage();
-    beforeAll(() => {
+    beforeEach(() => {
         protractor_1.browser.get(protractor_1.browser.baseUrl);
-        protractor_1.browser.sleep(2000);
+        protractor_1.browser.sleep(1000);
+        contatoPage.acessoContato();
     });
     it("Acessa Contato", () => {
-        contatoPage.acessoContato();
         expect(contatoPage.retornaContato()).toEqual('Contato');
-        protractor_1.browser.sleep(4000);
+        protractor_1.browser.sleep(1500);
+    });
+    it("Escreve nome", () => {
+        contatoPage.digitaNome('Guilherme');
+        expect(contatoPage.pegaNome()).toEqual('Guilherme');
+        protractor_1.browser.sleep(1000);
+    });
+    it("Escreve E-mail", () => {
+        contatoPage.digitaEmail('guilherme@teste.com');
+        expect(contatoPage.pegaEmail()).toEqual('guilherme@teste.com');
+        protractor_1.browser.sleep(1000);
     });
 });

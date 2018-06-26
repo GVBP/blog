@@ -1,12 +1,15 @@
-import { protractor, promise, browser, element, by} from "protractor"
+import { protractor, promise, browser, element, by, ElementFinder } from "protractor"
 
 export class ContatoPage {
 
-    public acessoContato (): void {
+    private link: ElementFinder = element(by.cssContainingText('.nav-link', 'Contato'))
+    private title: ElementFinder = element(by.tagName('h1'))
+    private nome: ElementFinder = element(by.id('uNome'))
+    private email: ElementFinder = element(by.id('uEmail'))
 
-        let elm = element(by.cssContainingText('.nav-link','Contato'))
+    public acessoContato(): void {
 
-        elm.click().then(() => {
+        this.link.click().then(() => {
             console.log("Cliquei")
         })
 
@@ -14,39 +17,32 @@ export class ContatoPage {
 
     public retornaContato(): promise.Promise<String> {
 
-        let elm = element(by.tagName('h1'))
-
-        return elm.getText()
+        return this.title.getText()
 
     }
 
-    public digitaNome(nome: string): void {
+    public digitaNome(n: string): void {
 
-        let elm = element(by.id('#uNome'))
+        this.nome.sendKeys(n)
 
-        elm.sendKeys(nome)
-    }
-
-    public digitaEmail(email: string): void {
-
-        let elm = element(by.id('#uEmail'))
-
-        elm.sendKeys(email)
     }
 
     public pegaNome(): promise.Promise<String> {
 
-        let elm = element(by.id('#uNome'))
+        return this.nome.getAttribute('value')
 
-        return elm.getText()
+    }
+
+    public digitaEmail(e: string): void {
+
+        this.email.sendKeys(e)
+
     }
 
     public pegaEmail(): promise.Promise<String> {
 
-        let elm = element(by.id('#uEmail'))
+        return this.email.getAttribute('value')
 
-        return elm.getText()
     }
 
- }
-
+}
