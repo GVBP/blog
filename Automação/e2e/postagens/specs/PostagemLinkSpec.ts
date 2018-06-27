@@ -1,26 +1,26 @@
 import { protractor, browser, by, element } from "protractor";
-import { ContatoLinks } from "../page-objects/ContatoLinks";
+import { PostagemLink } from "../page-objects/PostagemLink.js";
 
-describe("Teste sobre a página Contato: Links", () => {
+describe("Teste sobre a página Postagens: Links", () => {
 
-    const link = new ContatoLinks()
+    const link = new PostagemLink()
 
-    describe("Verificação da página Contato", () => {
+    describe("Verificação da página Postagens", () => {
 
         beforeAll(() => {
             browser.get(browser.baseUrl)
             browser.sleep(800)
         })
 
-        it("Verificação do link Contato", () => {
-
-            link.acessoContato()
-            expect(link.retornaContato()).toEqual('Contato');
+        it("Verificação do link Postagens", () => {
+            
+            link.acessoPostagens()
+            expect(link.retornaPostagens()).toEqual('Postagens');
             browser.sleep(800)
         })
     })
     
-    describe("Verificação dos links da página Contato", () => {
+    describe("Verificação dos links da página Postagens", () => {
 
         afterEach(() => {
 
@@ -34,11 +34,11 @@ describe("Teste sobre a página Contato: Links", () => {
             expect(link.retornaHome()).toEqual('BEM-VINDO AO MEU BLOG');
             browser.sleep(800)
         })
-        
-        it("Verificação do link Postagens", () => {
-            
-            link.acessoPostagens()
-            expect(link.retornaPostagens()).toEqual('Postagens');
+
+        it("Verificação do link Contato", () => {
+
+            link.acessoContato()
+            expect(link.retornaContato()).toEqual('Contato');
             browser.sleep(800)
         })
 

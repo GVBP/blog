@@ -10,7 +10,7 @@ describe("Teste sobre a página Contato", () => {
         beforeAll(() => {
 
             browser.get(browser.baseUrl)
-            browser.sleep(1000)
+            browser.sleep(800)
             contatoPage.acessoContato()
         })
 
@@ -18,21 +18,21 @@ describe("Teste sobre a página Contato", () => {
 
             contatoPage.digitaNome('Guilherme')
             expect(contatoPage.pegaNome()).toEqual('Guilherme')
-            browser.sleep(1000)
+            browser.sleep(800)
         })
 
         it("Verificação do campo e-mail", () => {
 
             contatoPage.digitaEmail('guilherme@teste.com')
             expect(contatoPage.pegaEmail()).toEqual('guilherme@teste.com')
-            browser.sleep(1000)
+            browser.sleep(800)
         })
 
         it("Verificação do campo mensagem", () => {
 
             contatoPage.digitaMensagem('Alguma mensagem...')
             expect(contatoPage.pegaMensagem()).toEqual('Alguma mensagem...')
-            browser.sleep(1000)
+            browser.sleep(800)
         })
 
         describe("Verificação do botão limpar", () => {
@@ -45,19 +45,19 @@ describe("Teste sobre a página Contato", () => {
             it("Verificação do campo nome, precisa estar vazio", () => {
 
                 expect(contatoPage.pegaNome()).toEqual('')
-                browser.sleep(1000)
+                browser.sleep(800)
             })
 
             it("Verificação do campo e-mail, precisa estar vazio", () => {
 
                 expect(contatoPage.pegaEmail()).toEqual('')
-                browser.sleep(1000)
+                browser.sleep(800)
             })
 
             it("Verificação do campo mensagem, precisa estar vazio", () => {
 
                 expect(contatoPage.pegaMensagem()).toEqual('')
-                browser.sleep(1000)
+                browser.sleep(800)
             })
         })
 
@@ -68,26 +68,26 @@ describe("Teste sobre a página Contato", () => {
                 contatoPage.digitaNome('Guilherme')
                 contatoPage.digitaEmail('guilherme@teste.com')
                 contatoPage.digitaMensagem('Alguma mensagem...')
-                browser.sleep(1000)
+                browser.sleep(800)
                 contatoPage.clickEnviar()
             })
 
             it("Verificação do campo nome, precisa estar vazio", () => {
 
                 expect(contatoPage.pegaNome()).toEqual('')
-                browser.sleep(1000)
+                browser.sleep(800)
             })
 
             it("Verificação do campo e-mail, precisa estar vazio", () => {
 
                 expect(contatoPage.pegaEmail()).toEqual('')
-                browser.sleep(1000)
+                browser.sleep(800)
             })
 
             it("Verificação do campo mensagem, precisa estar vazio", () => {
 
                 expect(contatoPage.pegaMensagem()).toEqual('')
-                browser.sleep(1000)
+                browser.sleep(800)
             })
         })
 

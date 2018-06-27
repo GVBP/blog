@@ -1,26 +1,26 @@
 import { protractor, browser, by, element } from "protractor";
-import { ContatoLinks } from "../page-objects/ContatoLinks";
+import { SobreMLink } from "../page-objects/SobreMLink.js";
 
-describe("Teste sobre a página Contato: Links", () => {
+describe("Teste sobre a página Sobre Mim: Links", () => {
 
-    const link = new ContatoLinks()
+    const link = new SobreMLink()
 
-    describe("Verificação da página Contato", () => {
+    describe("Verificação da página Sobre Mim", () => {
 
         beforeAll(() => {
             browser.get(browser.baseUrl)
             browser.sleep(800)
         })
 
-        it("Verificação do link Contato", () => {
+        it("Verificação do link Sobre Mim", () => {
 
-            link.acessoContato()
-            expect(link.retornaContato()).toEqual('Contato');
+            link.acessoSobreMim()
+            expect(link.retornaSobreMim()).toEqual('Sobre Mim');
             browser.sleep(800)
         })
     })
     
-    describe("Verificação dos links da página Contato", () => {
+    describe("Verificação dos links da página Sobre Mim", () => {
 
         afterEach(() => {
 
@@ -42,10 +42,10 @@ describe("Teste sobre a página Contato: Links", () => {
             browser.sleep(800)
         })
 
-        it("Verificação do link Sobre Mim", () => {
+        it("Verificação do link Contato", () => {
 
-            link.acessoSobreMim()
-            expect(link.retornaSobreMim()).toEqual('Sobre Mim');
+            link.acessoContato()
+            expect(link.retornaContato()).toEqual('Contato');
             browser.sleep(800)
         })
 

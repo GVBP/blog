@@ -13,7 +13,10 @@ export let config: Config = {
         },
     },
 
+    // specs: ['../Home/specs/HomeLinkSpec.js'],
+    //specs: ['../Postagens/specs/PostagemLinkSpec.js'],
     specs: ['../contato/specs/ContatoSpec.js', '../contato/specs/ContatoLinkSpec.js'],
+    // specs: ['../SobreMim/specs/SobreMLinkSpec.js'],
 
     baseUrl: 'http://localhost:3000/',
 
