@@ -13,13 +13,14 @@ module.exports = function () {
     // Schema da Collection 'posts'
     var post = Schema({
 
-        _id : Number,
-        userId : Number,
+        _id : Schema.Types.ObjectId,
+        userId : { type: Schema.Types.ObjectId, ref: 'users' },
         Featured : Boolean,
         title : String,
         body : String,
         date : { day : Date, month : Date, year : Date },
-        imgPost : String
+        imgPost : String,
+        comment : [{ type: Schema.Types.ObjectId, ref: 'comments' }]
     });
 
     // Retorna o modelo da collection 'posts' com o Schema 'post'
