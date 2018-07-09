@@ -9,7 +9,6 @@ module.exports = function () {
         _id: Schema.Types.ObjectId,
         name: String,
         age: Number,
-        carro: [{ type: Schema.Types.ObjectId, ref: 'Carro' }],
         stories: [{ type: Schema.Types.ObjectId, ref: 'Story' }]
     });
 

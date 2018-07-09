@@ -1,31 +1,46 @@
-var ObjectId = require('mongoose').Types.ObjectId;
+var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 
 // Carrega/Executa trazendo apenas o retorno da function
 var Post = require('./../model/posts')();
-var User = require('./../model/users')();
-var Comment = require('./../model/comments')();
+// var User = require('./../model/users')();
+// var Comment = require('./../model/comments')();
 var Person = require('./../model/person')();
 var Story = require('./../model/story')();
-var Carro = require('./../model/carro')();
 
 
 /* GET posts page */
 // next referece a próxima middleware
 router.get('/', function (req, res, next) {
 
-    console.log('teste', Post);
+    Person
+        .findOne({ name: 'Ian Fleming' })
+        .populate('stories')
+        .exec(function (err, person) {
+            if (err) return handleError(err);
+            console.log(person);
 
-    Story.findOne({ title: 'Casino Royale' })
-        .populate('author')
+            Story.
+                find({ author: person._id }).
+                exec(function (err, stories) {
+                    if (err) return handleError(err);
+                    console.log('The stories are an array: ', stories);
+                });
+        });
+
+    Story.findOne({ title: /Casino Royale/i })
+        .select('title author _id')
+        .populate('author', 'name age -_id')
+        .populate('fans')
         .exec(function (err, story) {
             if (err) return handleError(err);
             console.log('The author is %s', story);
             // prints "The author is Ian Fleming"
 
-            res.json(story.author.name);
+            res.json(story);
         });
+
 
     // Post.find(null, function (err, posts) {
     //     if (err) throw err;
@@ -50,40 +65,41 @@ router.get('/:id', function (req, res) {
 
 router.get('/new/user', function (req, res, next) {
 
-    var author = new Person({
-        _id: new ObjectId(),
+    var author = Person({
+        _id: new mongoose.Types.ObjectId(),
         name: 'Ian Fleming',
         age: 50
     });
 
+    var story1 = Story({
+        title: 'Casino Royale',
+        author: author._id
+    });
+
+    author.stories.push(story1);
+
+
     author.save(function (err) {
         if (err) return handleError(err);
 
-        var story1 = new Story({
-            title: 'Casino Royale',
-            author: author._id    // assign the _id from the person
-        });
+        console.log('Antes da Story', author._id);
+        // var story1 = Story({
+        //     title: 'Casino Royale',
+        //     author: author._id
+        // });
 
-        story1.save(function (err) {
-            if (err) return handleError(err);
-            // thats it!
-        });
-
-        var carro1 = new Carro({
-
-            carro: "Audi",
-            year: "2018",
-            dono: author._id
-        });
-
-        carro1.save(function (err) {
-            if (err) return handleError(err);
-            // thats it!
-        });
+        // story1.save(function (err) {
+        //     if (err) return handleError(err);
+        //     // thats it!
+        // });
 
         console.log('vardepois', author);
     });
 
+    story1.save(function (err) {
+        if (err) return handleError(err);
+        // thats it!
+    });
     /*
         var user = new User({
     

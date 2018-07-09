@@ -8,7 +8,7 @@ module.exports = function () {
 
         author: { type: Schema.Types.ObjectId, ref: 'Person' },
         title: String,
-        carro: [{ type: Schema.Types.ObjectId, ref: 'Carro' }]
+        fans: [{ type: Schema.Types.ObjectId, ref: 'Person' }]
     });
 
     return db.model('Story', storySchema);
