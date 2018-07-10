@@ -14,11 +14,11 @@ module.exports = function () {
     var album = Schema({
 
         _id : Number,
-        userId : Number,
-        post : [ String ],
+        userId : {type: Schema.Types.ObjectId, ref:'Users'},
+        post : [{type: Schema.Types.ObjectId, ref:'Posts'}],
         url : String
     });
 
     // Retorna o modelo da collection 'albums' com o Schema 'album'
-    return db.model('albums', album);
+    return db.model('Albums', album);
 }

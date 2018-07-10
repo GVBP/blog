@@ -14,15 +14,15 @@ module.exports = function () {
     var post = Schema({
 
         _id : Schema.Types.ObjectId,
-        userId : { type: Schema.Types.ObjectId, ref: 'users' },
+        userId : { type: Schema.Types.ObjectId, ref: 'Users' },
         Featured : Boolean,
         title : String,
         body : String,
-        date : { day : Date, month : Date, year : Date },
+        date : { day : Number, month : Number, year : Number },
         imgPost : String,
-        comment : [{ type: Schema.Types.ObjectId, ref: 'comments' }]
+        comments : [{ type: Schema.Types.ObjectId, ref: 'Comments' }]
     });
 
     // Retorna o modelo da collection 'posts' com o Schema 'post'
-    return db.model('posts', post);
+    return db.model('Posts', post);
 }

@@ -20,10 +20,11 @@ module.exports = function () {
         geo : { lat : String, lng : String },
         phone : String,
         password : String,
-        post : [{ type: Schema.Types.ObjectId, ref: 'posts' }],
-        comment : [{ type: Schema.Types.ObjectId, ref: 'comments' }]
+        admin : Boolean,
+        posts : [{ type: Schema.Types.ObjectId, ref: 'Posts' }],
+        comments : [{ type: Schema.Types.ObjectId, ref: 'Comments' }]
     });
 
     // Retorna o modelo da collection 'users' com o Schema 'user'
-    return db.model('users', user);
+    return db.model('Users', user);
 }

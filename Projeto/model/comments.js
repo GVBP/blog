@@ -14,11 +14,11 @@ module.exports = function () {
     var comment = Schema({
 
         _id : Schema.Types.ObjectId,
-        postId : { type: Schema.Types.ObjectId, ref: 'posts' },
-        emailUserId : { type: Schema.Types.ObjectId, ref: 'users' },
+        postId : { type: Schema.Types.ObjectId, ref: 'Posts' },
+        emailUserId : { type: Schema.Types.ObjectId, ref: 'Users' },
         body : String
     });
 
     // Retorna o modelo da collection 'comments' com o Schema 'comment'
-    return db.model('comments', comment);
+    return db.model('Comments', comment);
 }

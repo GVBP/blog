@@ -1,52 +1,91 @@
-var mongoose = require('mongoose');
+var ObjectId = require('mongoose').Types.ObjectId;
 var express = require('express');
 var router = express.Router();
 
 // Carrega/Executa trazendo apenas o retorno da function
 var Post = require('./../model/posts')();
-// var User = require('./../model/users')();
-// var Comment = require('./../model/comments')();
-var Person = require('./../model/person')();
-var Story = require('./../model/story')();
+var User = require('./../model/users')();
+var Comment = require('./../model/comments')();
 
 
 /* GET posts page */
+router.post('/', function (req, res, next) {
+
+    var user = new User({
+        _id: new ObjectId(),
+        name: "Guilherme",
+        username: "gbvp",
+        email: "gvbp@teste.com",
+        geo: { lat: "00", lng: "00" },
+        phone: "00000-0000",
+        password: "123",
+        admin: true
+    });
+
+    var data = new Date();
+    // console.log('new date',data);
+    dia = data.getDate();
+    mes = (data.getMonth() + 1);
+    ano = data.getFullYear();
+
+    var post = new Post({
+        _id: new ObjectId(),
+        userId: user._id,
+        Featured: true,
+        title: "Casino Royale",
+        body: "would be fantastic, even though I can understand that project priorities are on Mongo. Sadly Microsoft seem to have implemented just a fair subset of the latest Mongo API (3.x), so deprecated stuff that comes from 2.x may not work.",
+        date: { day: dia, month: mes, year: ano },
+        imgPost: ""
+    });
+    // console.log('dia', dia + 'mes' + mes + 'ano' + ano);
+    // console.log('dia ', post.date.day + 'mes ' + post.date.month + 'ano ' + post.date.year);
+
+    user.posts = user.posts.concat([post]);
+    // user.posts.push(post);
+
+    var comment = new Comment({
+        _id: new ObjectId(),
+        postId: post._id,
+        emailUserId: user._id,
+        body: "In 4.6.4 you'll be able to use the usePushEach option in schemas: new Schema({ arr: [String] }, { usePushEach: true });"
+    });
+
+    user.comments = user.comments.concat([comment]);
+    post.comments = post.comments.concat([comment]);
+    // user.comments.push(comment);
+    // post.comments.push(comment);
+
+    user.save(function (err) {
+        if (err) throw err;
+        console.log('User save!');
+    });
+
+
+    post.save(function (err) {
+        if (err) throw err;
+        console.log('Post save!');
+    });
+
+    comment.save(function (err) {
+        if (err) throw err;
+        console.log('Comment save!');
+    });
+
+    res.redirect('/posts');
+});
+
 // next referece a próxima middleware
 router.get('/', function (req, res, next) {
 
-    Person
-        .findOne({ name: 'Ian Fleming' })
-        .populate('stories')
-        .exec(function (err, person) {
-            if (err) return handleError(err);
-            console.log(person);
-
-            Story.
-                find({ author: person._id }).
-                exec(function (err, stories) {
-                    if (err) return handleError(err);
-                    console.log('The stories are an array: ', stories);
-                });
+    Post
+        .find(null)
+        .populate('userId')
+        .populate('comments')
+        .exec(function (err, posts) {
+            if (err) throw err;
+            // res.json(posts);
+            res.render('posts', { title: 'Postagens', posts });
         });
-
-    Story.findOne({ title: /Casino Royale/i })
-        .select('title author _id')
-        .populate('author', 'name age -_id')
-        .populate('fans')
-        .exec(function (err, story) {
-            if (err) return handleError(err);
-            console.log('The author is %s', story);
-            // prints "The author is Ian Fleming"
-
-            res.json(story);
-        });
-
-
-    // Post.find(null, function (err, posts) {
-    //     if (err) throw err;
-    //     res.json(posts);
-    //     // res.render('posts', { title: 'Postagens', posts });
-    // });
 });
 
 /* GET posts/:id -> comments */
@@ -54,96 +93,15 @@ router.get('/:id', function (req, res) {
     var id = req.params.id;
 
     Post.findOne({ "_id": id })
-        .populate('user comments')
+        .populate('userId')
+        .populate('comments')
         .exec(function (err, post) {
             if (err) throw err;
-            res.json(post);
+            // res.json(post);
+            console.log('Post', post);
+            res.render('comments', { title: "Comentários", post });
         });
 
-    // res.render('comments', { title: "Comentários", doc });
-});
-
-router.get('/new/user', function (req, res, next) {
-
-    var author = Person({
-        _id: new mongoose.Types.ObjectId(),
-        name: 'Ian Fleming',
-        age: 50
-    });
-
-    var story1 = Story({
-        title: 'Casino Royale',
-        author: author._id
-    });
-
-    author.stories.push(story1);
-
-
-    author.save(function (err) {
-        if (err) return handleError(err);
-
-        console.log('Antes da Story', author._id);
-        // var story1 = Story({
-        //     title: 'Casino Royale',
-        //     author: author._id
-        // });
-
-        // story1.save(function (err) {
-        //     if (err) return handleError(err);
-        //     // thats it!
-        // });
-
-        console.log('vardepois', author);
-    });
-
-    story1.save(function (err) {
-        if (err) return handleError(err);
-        // thats it!
-    });
-    /*
-        var user = new User({
-    
-            _id: new ObjectId(),
-            name: "Guilherme",
-            username: "gvbp",
-            email: "guilherme@blog.com.br",
-            geo: { lat: "0", lng: "0" },
-            phone: "00000-0000",
-            password: "teste"
-        });
-    
-        user.save(function (err) {
-            if (err) throw err;
-    
-            var data = new Date()
-    
-            var post1 = new Post({
-    
-                _id: new ObjectId(),
-                userId: user._id,
-                Featured: true,
-                title: "Postagem teste",
-                body: "Texto teste",
-                date: { day: data.getDate(), month: (data.getMonth() + 1), year: data.getFullYear() },
-                imgPost: "0"
-            });
-    
-            var comment1 = new Comment({
-    
-                _id: new ObjectId(),
-                postId: post1._id,
-                emailUserId: user._id,
-                body: String,
-            });
-        });
-    
-        Post.findOne({ title : 'Postagem teste' })
-            .populate('users comments')
-            .exec(function (err, post) {
-                console.log('teste', post.user.title);
-            });
-    */
-    res.redirect('/posts');
 });
 
 module.exports = router;
