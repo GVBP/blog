@@ -1,4 +1,10 @@
-function formularios() {
+var mongoose = require('mongoose');
+
+
+function formularios(banco) {
+    
+
+
     var mensagem = document.getElementById('mensagem').value;
     var nome = document.getElementById('nome').value;
     var comentarios = [];

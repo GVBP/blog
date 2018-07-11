@@ -33,12 +33,26 @@ router.post('/', function (req, res, next) {
         userId: user._id,
         Featured: true,
         title: "Casino Royale",
-        body: "would be fantastic, even though I can understand that project priorities are on Mongo. Sadly Microsoft seem to have implemented just a fair subset of the latest Mongo API (3.x), so deprecated stuff that comes from 2.x may not work.",
+        body: "Sed hendrerit. Nullam tincidunt adipiscing enim. Proin faucibus arcu quis ante. Praesent venenatis metus at tortor pulvinar varius. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla facilisi. Praesent ut ligula non mi varius sagittis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Quisque id odio. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Phasellus dolor. Fusce ac felis sit amet ligula pharetra condimentum. Phasellus accumsan cursus velit. Praesent turpis. Curabitur vestibulum aliquam leo. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. In hac habitasse platea dictumst. Fusce a quam. Phasellus blandit leo ut odio. Donec posuere vulputate arcu. Vivamus elementum semper nisi.. Curabitur suscipit suscipit tellus.",
         date: { day: dia, month: mes, year: ano },
         imgPost: ""
     });
     // console.log('dia', dia + 'mes' + mes + 'ano' + ano);
     // console.log('dia ', post.date.day + 'mes ' + post.date.month + 'ano ' + post.date.year);
+
+    var b = post.body;
+    var prev = str(b);
+    
+    function str(b) {
+        var s = "";
+        for (var i = 0; i <= 200; i++) {
+            s += b.charAt(i);
+        }
+        s += "...";
+        return s
+    }
+
+    post.previous = prev;
 
     user.posts = user.posts.concat([post]);
     // user.posts.push(post);
@@ -47,7 +61,7 @@ router.post('/', function (req, res, next) {
         _id: new ObjectId(),
         postId: post._id,
         emailUserId: user._id,
-        body: "In 4.6.4 you'll be able to use the usePushEach option in schemas: new Schema({ arr: [String] }, { usePushEach: true });"
+        body: "Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. In auctor lobortis lacus. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero."
     });
 
     user.comments = user.comments.concat([comment]);

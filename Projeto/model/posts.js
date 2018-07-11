@@ -17,6 +17,7 @@ module.exports = function () {
         userId : { type: Schema.Types.ObjectId, ref: 'Users' },
         Featured : Boolean,
         title : String,
+        previous : String,
         body : String,
         date : { day : Number, month : Number, year : Number },
         imgPost : String,
