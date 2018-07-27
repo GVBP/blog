@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "nodemon ./Projeto/bin/www",
-    "bTest": "protractor Automação/e2e/conf/protractor.conf.js",
+    "bTest": "protractor automacao/e2e/conf/protractor.conf.js",
     "update": "webdriver-manager update",
     "startWeb": "webdriver-manager start",
     "tsc": "tsc -w"
